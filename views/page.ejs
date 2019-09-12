@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <%include partials/header.ejs%>
+<center>
+<div class="card1">
+    <div class="grid-container">
+                        
+<div class="grid-item" style="margin-left:-8;" id="SEM" onclick="types('SEM');document.getElementById('submitto').setAttribute('action','/time/semester');document.getElementById('target').setAttribute('href','/display_semester_time_table'); " ><abutton >Name</abutton></div>
+<div class="grid-item"  id="UT" onclick="types('UT');document.getElementById('submitto').setAttribute('action','/time/ut');document.getElementById('target').setAttribute('href','/display_ut_time_table');"><abutton >Date</abutton></div>
+
+    <form action="">
+        <div class="row">
+            <div class="col1">
+                <label>SDRN:</label>
+            </div>
+            <div class="col2">
+               <input type="text" name="" placeholder="Name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col1">
+                <lable>Name:</lable>
+            </div>
+            <div class="col2">
+                <input type="text" name="" placeholder="Name">
+            </div>
+            <input type="button" class="button" style="margin-top: 2rem;" value="Submit">
+
+    </form>
+    </div>
+<div>
+</center>
+</body>
+<link rel="stylesheet" href="../assets/css/page.css">
+</html>

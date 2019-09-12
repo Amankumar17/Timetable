@@ -1,0 +1,79 @@
+body{
+    margin-top: 2%;
+    background: url('../images/bg7.jpg');
+    background-position: center;
+    overflow: hidden;
+    background-size: 100%;
+    background-position-y: 10%;
+    
+
+}
+
+
+*{
+    box-sizing: border-box;
+  }
+  
+  .col {
+    float: left;
+    width: 33.33%;
+    padding:8px 10px;
+  }
+  
+
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    
+  }
+
+  /*.card1{
+      width:33.33%;
+    
+    
+      
+      box-shadow: 10px 10px 5px #aaaaaa;
+
+  }*/
+  .card1 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color:transparent;
+    margin:15px;
+    
+  }
+  .card1:hover{
+    background-color: powderblue;
+    cursor: pointer;
+  }
+  
+
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 10px;
+      
+      
+    }
+  
+    i.fa.fa-user,i.fa.fa-clock-o,i.fa.fa-cogs,i.fa.fa-refresh,i.fa.fa-eye,i.fa.fa-pencil-square-o{
+      -webkit-transform: scale(0.25);
+      -webkit-transform-origin-x: 20%;
+      
+     }
+s
+     div.card1{
+         padding:-0.5rem; 
+     }
+
+}
+
+  i.fa.fa-user,i.fa.fa-clock-o,i.fa.fa-cogs,i.fa.fa-refresh,i.fa.fa-eye,i.fa.fa-pencil-square-o{
+      font-size: 10rem;
+  }
+  
+  
+  

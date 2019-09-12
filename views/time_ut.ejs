@@ -1,0 +1,145 @@
+
+<!--Sun front -end accha kar-->
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="../assets/css/dy1st.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ENTER TIMETABLE HERE!!</title>
+</head>
+<body>
+    
+    <%include partials/header.ejs%>
+   <center>
+     
+        <form action="/time/ut" method="POST" id="submitto">
+
+            
+
+        <div class="card">
+            
+                <div class="grid-container">
+                        
+            <a href="/time"><div class="grid-item"  id="SEM" onclick="types('SEM');document.getElementById('submitto').setAttribute('action','/time/semester');document.getElementById('target').setAttribute('href','/display_semester_time_table'); " ><abutton >SEM</abutton></div></a>
+            <a href="/time_ut"><div class="grid-item"  id="UT" onclick="types('UT');document.getElementById('submitto').setAttribute('action','/time/ut');document.getElementById('target').setAttribute('href','/display_ut_time_table');"><abutton >UT</abutton></div> </a>
+                    </div>
+                     <input type="text" name="exam" id="exam" value="UT">   
+        <br>
+        <table>
+        <tr>
+        <td><p class="three">Date :</p></td>
+        <td colspan="2">
+        
+        <input type="date" align="center" id="exdate" name="exdate" style="width:auto" required >
+
+          
+        </td>
+        </tr>
+        
+        <!--<tr>
+        <td><p class="three">No. of Blocks:</p></td>
+        <td><input type="text" id="blocks" align="center" name="blocks" style="width:auto" required></td>
+
+        </tr>-->
+        <tr>
+            <td><p class="three">Time-slot 1:</p></td>
+            <td><input type="text" id="blocks" align="center" name="blocks" style="width:auto" value="0" required></td>
+        </tr>
+        
+        <tr>
+            <td><p class="three">Time-slot 2:</p></td>
+            <td><input type="text" id="blocks" align="center" name="blocks" style="width:auto" value="0" required></td>
+        </tr>
+
+        <tr>
+            <td><p class="three">Time-slot 3:</p></td>
+            <td><input type="text" id="blocks" align="center" name="blocks" style="width:auto" value="0" required></td>
+        </tr>
+
+        <tr>
+            <td><p class="three">Time-slot 4:</p></td>
+            <td><input type="text" id="blocks" align="center" name="blocks" style="width:auto" value="0" required></td>
+        </tr>
+        
+            
+        
+        </td>
+        </tr>
+         
+    </table>
+        
+        <br>
+        
+        <button class="button">Submit</button>
+        <br><br>
+        <div class="grid-container">
+
+    <div class="grid-item" id="UPDATE" title="VIEW TIME TABLE AND UPDATE NUMBER OF BLOCKS ONLY!!" >
+        <a href="/display_ut_time_table" id="target" target="_blank" >View/UPDATE</a></div>
+    <div class="grid-item" id="FACULTY"  title="INPUT FACULTY DETAILS!!"> 
+        <a href="/teacher" target="_blank" >FACULTY-INPUT</a></div>
+        </div>
+
+    
+    </div>
+        <br>
+</form>
+      
+      <hr>
+          
+        </center>
+    
+        <link rel="stylesheet" href="/assets/css/time.css">
+
+
+</body>
+
+<script>
+        document.getElementById('UT').style.backgroundColor="#95F184"
+</script>
+
+            <script>
+                function types(eve)
+                {   
+                    var val1="";
+                    var val2="";
+
+
+                   
+                    if(eve=='SEM'){ 
+                        val1="REGULAR"; val2="KT"; 
+                    document.getElementById("exam").setAttribute('value',"SEM");
+                    document.getElementById('SEM').style.backgroundColor="#95F184"
+                    document.getElementById('UT').style.backgroundColor="#F6FBF5"
+                    
+                }
+                    else  {
+                        val1="MORNING"; val2="EVENING";
+                        document.getElementById("exam").setAttribute('value',"UT");
+                        document.getElementById('UT').style.backgroundColor="#95F184"
+                        document.getElementById('SEM').style.backgroundColor="#F6FBF5"
+                   
+                    }
+                    document.getElementById('examtype1').setAttribute('value',val1);
+                    document.getElementById('examtype2').setAttribute('value',val2);
+
+                    document.getElementById('val1').innerHTML=val1;
+
+                    document.getElementById('val2').innerHTML=val2;
+
+                     
+
+
+                }
+            
+            </script>
+
+        <script>
+
+            console.log(document.URL)
+        </script>
+
+</html>
+

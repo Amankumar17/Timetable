@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DATE-WISE-DISPLAY</title>
+    <base href="/">
+</head>
+<body>
+    <%include partials/header.ejs%>
+    <br>
+    <br>
+
+    <center>
+    <table>
+        <tr>
+            <th>DATE-OF-EXAM</th>
+            <th>SDRN</th>
+            <th>DEPARTMENT</th>
+            <th>FACULTY</th>
+            <th>TYPE</th>
+            
+        </tr>
+        <%for(var i=0;i < data.length; i++){%>
+            <tr>
+              <td><%=data[i].date_of_exam%></td>
+              <td><%=data[i].SDRN%></td>
+              <td><%=data[i].DEPT%></td>
+              <td><%=data[i].teacher%></td>
+              <td><%=data[i].type%></td>
+            </tr>    
+            <%};%>
+        
+    </table>
+    </center>    
+    
+    <%include partials/footer.ejs%>
+    
+</body>
+    <link rel="stylesheet" href="/assets/css/display_teacher.css">  
+</html>

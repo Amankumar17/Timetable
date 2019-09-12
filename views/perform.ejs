@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" id="submitto" method="POST">
+
+        <button type="submit" class="but" onclick="check('1')" id="1" >AMAN ALGO</button>  <br> <br>
+        <button type="submit" class="but" onclick="check('2')" id="2" >SID ALGO</button>  <br> <br><br>
+        <button type="submit" class="but" onclick="check('3')" id="3" >AMAN RESET</button>  <br><br> <br>
+        <button type="submit" class="but" onclick="check('4')" id="4" >SID RESET</button>   <br><br> <br>
+    <!--    <button type="submit" class="but" onclick="check('5')" id="5" >ALL RESET</button>   <br><br> <br> -->
+        <button type="submit" class="but" onclick="check('6')" id="6" >SHOW PROFESSORS</button> <br><br> <br>
+        <button type="submit" class="but" onclick="check('7')" id="7" >SHOW ASSISTANT-PROFESSORS</button> <br><br> <br>
+        <button type="submit" class="but" onclick="check('8')" id="8" >SHOW ASSOCIATIVE PRPOFESSORS</button> <br><br> <br>
+        <button type="submit" class="but" onclick="check('9')" id="9" >SHOW TIME-TABLE</button> <br><br> <br>
+        <button type="submit" class="but" onclick="check('10')" id="10">SID_SELECTED TEACHERS</button> <br><br> <br>
+        <button type="submit" class="but" onclick="check('11')" id="11">SEMESTER TIME - TABLE</button> <br><br> <br>
+        <button type="submit" class="but" onclick="check('12')" id="12">UT TIME - TABLE</button> <br><br> <br>
+        <button type="submit" class="but" onclick="check('13')" id="13">DELETE SELECTED TEACHERS</button> <br><br> <br>
+        <button type="submit" class="but" onclick="check('14')" id="14">UT_algo</button> <br><br> <br>
+        
+        <button type="submit" class="but" onclick="check('15')" id="14">ALLOT SELECTED TEACHERS</button> <br><br> <br>
+       
+
+    </form>
+    <script>
+      function check(eve)
+      {
+          let link;
+        switch(eve)
+        {
+            case '1': link="/aman_algo" ; break;
+            case '2': link="/sid_algo" ; break;
+            case '3': link="/aman_reset" ; break;
+            case '4': link="/sid_reset" ; break;
+            case '5': link="/all_reset" ; break;
+            case '6': link="/professors";break;
+            case '7': link="/asstprofessors";break;
+            case '8': link="/asscprofessors";break;
+            case '9': link="/timetable";break;
+            case '10': link="/sid_selected";break;
+            case '11': link="/timetable/semester";break;
+            case '12': link="/timetable/ut";break;
+            case '13': link="/delete_selected_teachers";break;
+            case '14':link="/ut_algo";break;
+            case '15':link="/allot_selected";break;
+            
+            
+            
+            
+        }
+
+        document.getElementById("submitto").setAttribute("action",link);
+           
+      
+    }  
+        
+    </script>
+</body>
+</html>

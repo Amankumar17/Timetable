@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SEMESTER TIME TABLE</title>
+</head>
+<body>
+    <%include partials/header.ejs%>
+     
+    
+   <form action="" method="post" id="submittoform" >
+
+    <center><h1 style="background-color: yellow;">  THE BELOW IS THE RECORDS OF UPCOMING SEMESTER EXAM DATES</h1> 
+        <button type="submit" onclick="document.getElementById('submittoform').setAttribute('action','/update/time_table/sem');"> UPDATE</button>   </center>
+    <br>
+    <center>    
+    
+    <table cellspacing="50px;" style="background-color: gold;" >
+            <tr>
+                <th rowspan="2">EXAM</th>
+                <th rowspan="2">DATE - OF - EXAM</th>
+                <th colspan="2" >NUMBER OF BLOCKS </th>
+                <th rowspan="2" >EXAM - TYPE</th>
+                         
+            </tr>
+
+            <tr>
+                <th >MORNING</th>
+                <th >EVENING</th>     
+            </tr>
+
+   
+    <%if(data.length>0){%>
+
+        <%for(var i=0;i<data.length;i++){%>
+
+                <tr>
+                     <td>  <%=data[i].exam%> </td>
+                     <td>  <input type="text" name="exdate"  size="12" value="<%=data[i].exdate%>" readonly style="width: fit-content;border:0.2rem solid transparent; font-size:1rem;background-color: gold;" > </td>  
+                     <td>  <input type="text" name="morning_blocks" size="3" value="<%=data[i].morning_blocks%>" style="width: fit-content;border:0.2rem solid transparent; font-size:1rem;" >  </td>   
+                     <td>  <input type="text" name="evening_blocks" size="3" value="<%=data[i].evening_blocks%>" style="width: fit-content;border:0.2rem solid transparent; font-size:1rem;" >  </td>   
+                    
+                     <td> <%=data[i].examtype%> </td>
+
+                </tr>
+             
+            <%};%>
+        <%};%>
+
+    </table>
+   
+</center>
+  
+    <br>
+    
+</form>        
+    
+
+<%include partials/footer.ejs%> 
+    <link rel="stylesheet" href="../assets/css/display_tt.css">
+</body>
+</html>

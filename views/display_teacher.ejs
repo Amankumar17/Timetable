@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Display TIMETABLE HERE!!</title>
+    <base href="/">
+</head>
+<body>
+    <% var Departments=['ENGINEERING SCIENCES','COMPUTER ENGINEERING','INFORMATION TECHNOLOGY','ELECTRONICS & TELECOMMUNICATION ENGINEERING','ELECTRONICS ENGINEERING','INSTRUMENTATION ENGINEERING']; %>
+    <%include partials/header.ejs%> 
+    <br>
+    <div class="navbar">   
+            <a href="/home">Home</a>
+            <div class="dropdown">
+              <button class="dropbtn">Department 
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content" >
+                <% for(var i=0; i < Departments.length; i++){%>
+                <div class="row">
+                  <div class="column" >
+                    <h3><%=Departments[i]%></h3>
+                    <a href="/display_teacher/<%=Departments[i]%>/PROFESSOR">PROFESSOR</a>
+                    <a href="/display_teacher/<%=Departments[i]%>/ASSISTANT-PROFESSOR">ASSISTANT-PROFESSOR</a>
+                    <a href="/display_teacher/<%=Departments[i]%>/ASSOCIATE-PROFESSOR">ASSOCIATE-PROFESSOR</a>
+
+                  </div>
+                
+                <%};%>
+  
+                </div></div></div></div></div>
+              </div>
+            </div>
+            
+            
+               
+              <form action="" style="float:right; margin-top:1%;margin-left:50rem;">
+                <input type="text" placeholder="Search.." name="search" style="float:right;" class="b">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+
+
+        </div> </div>
+
+        <br>
+        
+
+       
+        <% if ( typeof data !== 'undefined' && data.length>0){ %>
+         <center>
+        <table>
+           <caption style="margin-bottom: 2rem;"> <strong><h2>TEACHERS in <%=data[0].DEPT%> who are <%=data[0].DESIG%> are:</h2> </strong>  </caption>
+           
+              <tr>
+                  <th>SDRN</th>
+                  <th>NAME</th>
+              </tr>
+            <% for(var i=0; i< data.length ; i++ ) {%>
+                <tr>
+                  <td><%=data[i].SDRN%></td>
+                  
+                  <td><%=data[i].UNAME%></td>
+
+                </tr>
+              
+              <%};%>          
+
+        
+       </table>
+      </center>
+       <%};%>
+       
+
+        
+
+
+          
+          
+
+
+    
+
+</body>
+<link rel="stylesheet" href="../assets/css/display_teacher.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</html>    

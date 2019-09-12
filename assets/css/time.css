@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    padding:0;
+    background:url('../images/bd.jpg') no-repeat ;
+    font-family: sans-serif;
+    background-size: 100%;
+    background-position-y: 15%;
+    
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    
+}
+.grid-container1{background-color: lightgreen;}
+
+.grid-item{
+    font-family: cursive;
+    width:auto;
+    height:50%;
+    padding:10px;
+    cursor:pointer;
+    }
+
+.grid-item:hover{
+    box-shadow: 10px 11px 18px #a8a5aa;
+    color:brown;
+    cursor:pointer;
+} 
+.grid-item:active{
+    box-shadow: 10px 11px 18px #a8a5aa;
+    color:brown;
+    background: lightgreen;
+    cursor:pointer;
+} 
+
+
+input#exam{
+    display:none;
+}
+
+.card{
+    box-shadow: 5px 5px 5px 5px grey; 
+    
+}
+
+input[type="text"],input[type="date"]{
+    width: 200%;
+}
+
+div#UPDATE{
+    background-color:lightgreen ;
+   width: 100%;  
+}
+
+div#FACULTY{
+    background-color:lightgreen;
+    }
+
+
+div#UPDATE:hover,div#FACULTY:hover{
+    background-color: yellow;
+    border: 0.1px solid black;
+
+    
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}

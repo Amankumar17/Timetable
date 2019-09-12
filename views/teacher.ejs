@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="../assets/css/teacher.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ENTER TEACHER DETAILS!!</title>
+</head>
+<body>
+            <%include partials/header.ejs%>
+    <center>
+          
+            
+        <% if (typeof data !=='undefined' && data.length>0) {%>
+          
+            <% if(data=='failure'){ %>
+                <div class="w3-panel w3-red" id="alert"  style="background-color: red">DATA COULD NOT BE LOADED!!</div>
+                
+                <%};%>
+        <%}%>
+
+        <% if (typeof data !=='undefined' && data.length>0) {%>
+          
+            <% if(data=='success'){ %>
+                <div class="w3-panel w3-green" id="alert" style="background-color: green">SAVED SUCCESSFULLY</div>
+                <%};%>
+           
+        <%}%>
+        <br>
+        
+        <div class="grid-container">
+                
+                <div class="grid-item but1" id="UPDATE"  style="float:left;" title="VIEW TIME TABLE AND UPDATE NUMBER OF BLOCKS ONLY!!" >
+                    <a href="/display_teacher" id="target" target="_blank" >View/UPDATE</a></div>
+                <div class="grid-item but1" id="FACULTY"  style="float:left;"  title="INPUT TIME-TABLE!!"> 
+                    <a href="/time" target="_blank" >TIME-TABLE-INPUT</a></div>
+                    </div>
+                  <br>
+        </div>
+        
+<form action="/teacher" method="POST">
+        <div class="card">
+        
+        <table>
+        <tr>
+        <td><p class="three">Name:</p></td>
+        <td>
+        
+        <input type="text" id="name" name="UNAME" style="width:auto" size="22" required>
+
+          
+        </td>
+        </tr>
+        
+        <tr>
+        <td><p class="three">SDRN:</p></td>
+        <td><input type="text" name="SDRN" size="22" required></td>
+        </tr>
+        
+        <tr>
+        <td><p class="three">Department:</p></td>
+        <td>    
+            <select  name="DEPT" id="department" style="width: 47%;" >
+            <option value="ENGINEERING SCIENCES"> ENGINEERING SCIENCES</option>
+            <option value="COMPUTER ENGINEERING" > COMPUTER ENGINEERING </option>
+            <option value="INFORMATION TECHNOLOGY" > INFORMATION TECHNOLOGY </option>
+            <option value="ELECTRONICS ENGINEERING"> ELECTRONICS ENGINEERING </option>
+            <option value="ELECTRONICS & TELECOMMUNICATION ENGINEERING"> ELECTRONICS & TELECOMMUNICATION ENGINEERING </option>
+            <option value="INSTRUMENTATION ENGINEERING"> INSTRUMENTATION ENGINEERING </option>
+            </select>        
+        </td>
+        </tr>
+            
+
+        <tr>
+        <td><p class="three">Designation:</p></td>
+        <td>
+        
+        <select  name="DESIG" id="designation" onchange="dut()" style="width: 47%;" >
+            <option value="PROFESSOR" selected> PROFESSOR </option>
+            <option value="ASSISTANT-PROFESSOR">ASSISTANT-PROFESSOR </option>
+            <option value="ASSOCIATE-PROFESSOR">ASSOCIATE-PROFESSOR </option>
+            </select>        
+        </td>
+        </tr>
+        
+        
+        <tr>
+            <td><p class="three">Duties:</p></td>
+            <td>        
+                <input type="text" name="DUTIES" id="duties" value="2" style="background-color: lightgrey;" size="22" readonly required>
+            </td>
+            </tr>
+        
+        </table>
+        
+        
+        <button class="button">Submit</button>
+    
+          
+
+</form>
+   
+    
+ </body>
+
+<script>
+          function dut(){
+
+           console.log(document.getElementById('name').value) 
+
+           var design= document.getElementById('designation');
+           var duties=0;
+            //console.log(design.value)
+            switch(design.value)
+            {
+                case "PROFESSOR" : duties=2; break;
+                case "ASSISTANT-PROFESSOR": duties=8;break;
+                case "ASSOCIATE-PROFESSOR": duties=4; break;
+                
+
+            }    
+              
+            document.getElementById('duties').setAttribute('value',duties);
+            document.getElementById('duties').innerHTML=String(duties);
+
+
+
+          }
+      </script>
+
+
+<script>
+    setTimeout(()=>{document.getElementById('alert').style.display="none";},3000);
+</script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+     
+      
+</html>

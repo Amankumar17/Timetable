@@ -1,0 +1,42 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    
+}
+.grid-container1{background-color: lightgreen;}
+
+.grid-item{
+    font-family: cursive;
+    width:20%;
+    height:40%;
+    padding: 10px;
+    cursor:pointer;
+}
+
+.grid-item:hover{
+    box-shadow: 10px 11px 18px #a8a5aa;
+    color:brown;
+    cursor:pointer;
+} 
+.grid-item:active{
+    box-shadow: 10px 11px 18px #a8a5aa;
+    color:brown;
+    background: lightgreen;
+    cursor:pointer;
+} 
+
+
+.card{
+        width: 80%;
+          height: 100%;
+          padding: 10px;
+          background-color:#FDFFFB;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          margin:4%;
+          text-align: center;
+    }
+
+
+input#exam{
+    display:none;
+}

@@ -1,0 +1,76 @@
+@media screen and (max-width: 600px) {
+    .col1, .col2, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  
+
+
+body{
+    margin:0;
+    padding:0;
+    background-image: url('../images/bd.jpg') no-repeat;
+}
+
+.col1{
+    float:left;
+    width:25%;
+    margin-top:6%;
+
+}
+
+.col2{
+    float:left;
+    width:75%;
+    margin-top:6%;
+}
+
+.row:after{
+    clear: both;
+    display: table;
+    /*content:"";*/
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    
+}
+
+.grid-item{
+    font-family: cursive;
+    /*width:20%;
+    height:40%;
+    padding: 5%;*/
+    cursor:pointer;
+    content: center;
+}
+
+.card1{
+    width: 20rem;
+      height: auto;
+      padding:1%;
+      background-color:#FDFFFB;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      margin:5%;
+      text-align: center;
+      translate:(-50%,-50%);
+    }
+.button {
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 12px;
+        color: white;
+        width:50%;
+        height:18%;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+      
+      

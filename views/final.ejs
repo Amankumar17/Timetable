@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>View!!</title>
+</head>
+<body>
+            <%include partials/header.ejs%>
+    <center>
+          
+            
+            
+
+
+        <form action="/final" method  ="POST">
+        <div class="card">
+        <br>
+        <table>
+        <tr>
+        <td><p class="three">Name:</p></td>
+        <td>
+        
+        <input type="text" id="name" name="UNAME" style="width:auto" required >
+
+          
+        </td>
+        </tr>
+        
+        <tr>
+        <td><p class="three">SDRN:</p></td>
+        <td><input type="text" name="SDRN" required></td>
+
+        </tr>
+
+        
+        
+         <tr>
+        <td><p class="three">Date:</p></td>
+        <td>
+        <input type=date name="d1" required>
+        <!--<select  name="DESIG" id="designation" onchange="dut()" style="width: 42%;" >
+            <option value="PROFESSOR" selected > PROFESSOR </option>
+            <option value="ASSISTANT-PROFESSOR" >  ASSISTANT-PROFESSOR </option>
+            <option value="ASSOCIATIVE-PROFESSOR"> ASSOCIATIVE-PROFESSOR </option>
+            </select>-->       
+        </td>
+        </tr>
+        
+        
+        <!--<tr>
+            <td><p class="three">Duties:</p></td>
+            <td>
+                <input type="text" name="DUTIES" id="duties" value="2" readonly>
+            </td>
+            </tr>-->
+        
+        </table>
+        
+        <br>
+        
+        <button class="button">Submit</button>
+    </div>
+          
+</form>
+      
+      <hr>
+          
+        </center>
+
+        
+</body>
+<link rel="stylesheet" href="popupS.css">
+<script src="popupS.js"></script>
+      <link rel="stylesheet" href="../assets/css/final.css">
+
+      <script>
+          function dut(){
+
+           console.log(document.getElementById('name').value) 
+
+           var design= document.getElementById('designation');
+           var duties=0;
+            //console.log(design.value)
+            switch(design.value)
+            {
+                case "PROFESSOR" : duties=2; break;
+                case "ASSISTANT-PROFESSOR": duties=8;break;
+                case "ASSOCIATIVE-PROFESSOR": duties=4; break;
+                
+
+            }    
+              
+            document.getElementById('duties').setAttribute('value',duties);
+            document.getElementById('duties').innerHTML=String(duties);
+
+
+
+          }
+      </script>
+
+
+     
+      
+</html>

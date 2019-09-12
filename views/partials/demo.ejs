@@ -1,0 +1,128 @@
+<!--Sun front -end accha kar-->
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="../assets/css/demo.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ENTER TIMETABLE HERE!!</title>
+</head>
+<body>
+    
+<!--    <%include partials/header.ejs%>  -->
+    <center>
+     
+        <form action="/time" method="POST">
+
+            
+
+        <div class="card1">
+            
+                <div class="grid-container">
+                        
+                        <div class="grid-item"  id="SEM" onclick="types('SEM')" ><abutton >SEM</abutton></div>
+                        <div class="grid-item" id="UT" onclick="types('UT')"><abutton >UT</abutton></div>
+                </div>
+                     <input type="text" name="exam" id="exam" value="">   
+        <br>
+        <table>
+        <tr>
+        <td><p class="three">Date :</p></td>
+        <td>
+        
+        <input type="date" id="exdate" name="exdate" style="width:auto" required >
+
+          
+        </td>
+        </tr>
+        
+        <tr>
+        <td><p class="three">No. of Blocks:</p></td>
+        <td><input type="text" id="blocks" name="blocks" style="width:auto" required></td>
+
+        </tr>
+        
+        <tr>
+        <td><p class="three">Type:</p></td>
+        <td>
+    
+      <!--  <select  name="type1" id="type1"  style="width:35%" >
+              <option value="" id="val1" selected > Regular </option>
+              <option value="" id="val2" >  KT </option>
+            </select>        -->
+            
+        <input type="radio" name="examtype" id="examtype1" value="" required> 
+        <label for="type1" id="val1" style="margin-right: 3rem; width:2rem;">REGULAR</label> 
+        <input type="radio" name="examtype" id="examtype2" value="" required> 
+        <label for="type2" id="val2" style="width:2rem;" >KT</label>
+            
+        
+        </td>
+        </tr>
+         
+    </table>
+        
+        <br>
+        
+        <button class="button">Submit</button>
+    </div>
+          
+</form>
+      
+      <hr>
+          
+        </center>
+    
+        <link rel="stylesheet" href="../assets/css/demo.css">
+
+
+</body>
+
+<script>
+        document.getElementById('SEM').style.backgroundColor="#95F184"
+</script>
+
+            <script>
+                function types(eve)
+                {   
+                    var val1="";
+                    var val2="";
+
+
+                   
+                    if(eve=='SEM'){ 
+                        val1="REGULAR"; val2="KT"; 
+                    document.getElementById("exam").setAttribute('value',"SEM");
+                    document.getElementById('SEM').style.backgroundColor="#95F184"
+                    document.getElementById('UT').style.backgroundColor="#F6FBF5"
+                    
+                }
+                    else  {
+                        val1="MORNING"; val2="EVENING";
+                        document.getElementById("exam").setAttribute('value',"UT");
+                        document.getElementById('UT').style.backgroundColor="#95F184"
+                        document.getElementById('SEM').style.backgroundColor="#F6FBF5"
+                   
+                    }
+                    document.getElementById('examtype1').setAttribute('value',val1);
+                    document.getElementById('examtype2').setAttribute('value',val2);
+
+                    document.getElementById('val1').innerHTML=val1;
+
+                    document.getElementById('val2').innerHTML=val2;
+
+                     
+
+
+                }
+            
+            </script>
+
+        <script>
+
+            console.log(document.URL)
+        </script>
+
+</html>
+

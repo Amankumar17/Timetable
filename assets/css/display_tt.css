@@ -1,0 +1,100 @@
+@media only screen and (max-width: 800px) {
+   .grid-container{
+
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-column-gap: 0.5rem;
+   }
+
+   span{
+       font-family: Arial, Helvetica, sans-serif;
+       font-size: 0.5rem;
+   }
+
+
+
+   body{
+    background:url('../images/bd.jpg');
+    font-family: sans-serif;
+    height: 100%;
+    margin:10%;
+    padding:5%;
+    background-size: cover;
+    
+    }
+
+    h1{
+        font-size: 0.5rem;
+    }
+
+}
+/*
+body{
+    background:url('../images/bd.jpg');
+    font-family: sans-serif;
+    
+    height: 100%;
+    background-size: cover;
+    background-position-x: -100%;
+    }
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-column-gap: 2rem;
+}*/
+
+span{
+    font-family: cursive;
+    font-size: 1rem;
+}
+
+button{
+    border: 0.1rem solid black;
+    font-size: 2rem;
+    background: red;
+    border-radius: 3px;
+    cursor: pointer;
+    position: sticky;
+    width: 20%;
+
+}
+/*
+button:hover{
+    box-shadow: 0.2rem 0.2rem grey;
+}
+
+table,tr,td,th{
+    border: 1px solid black;
+}
+
+h1{
+    position: sticky;
+}*/
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+  }
+  
+  th{
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+    background-color: rgb(223, 215, 215);
+    color: rgb(20, 18, 18);
+  }
+
+  td{
+    padding: 8px;
+        text-align: center;
+
+  }
+
+  
+  tr:nth-child(even) {
+    background-color: #69f7a4;
+  }
+ 
+   

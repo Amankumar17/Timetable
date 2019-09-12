@@ -1,0 +1,183 @@
+body{
+    margin: 0;
+    padding:0;
+    background:url('../images/rait2.jpg') no-repeat ;
+    font-family: sans-serif;
+    background-size: 100%;
+    background-position-y: 5%;
+    }
+
+fieldset{
+    width: fit-content;
+    height: 50%;
+    border: 5px solid black;
+    background: white;
+    background-size: cover;
+    background-position-y: 100px;
+    border-radius: 3rem ;
+    margin-top:5%;
+    
+
+}
+
+
+legend{
+    background:white;
+}
+
+.grid-container{
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+    
+}
+
+
+.grid-item{
+    padding: 1rem;
+    
+
+}
+
+button{
+    border: 3px solid black;
+    border-radius: 3px;
+    font-size: 1.5rem;
+ 
+}
+/*
+button:hover{
+    box-shadow: 3px 3px grey;
+    cursor: pointer;
+
+}
+
+input[type='text'],input[type='password']{
+    border-radius: 3rem;
+    border: 2px solid black;
+    padding: 0.3rem;
+    margin-top: -15%;
+}
+
+input[type='text']:hover,input[type='password']:hover{
+    border-radius: 5rem;
+    border: 2px solid red;
+}*/
+
+label{
+    border: 2px solid black;
+    padding: 0.5rem;
+    border-radius: 5rem;
+    width:fit-content;
+}
+
+input[type="text"]
+input[type="password"]
+{
+    opacity:0.0;
+}
+
+#login{
+    position: relative;
+    margin: 5% auto;
+    height: 400px;
+    background: #efefef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+h1{
+    margin: 0 0 20px 0;
+    font-weight: 300;
+    font-size: 28px;
+}
+
+.b{
+    background-color: black;
+    fill-opacity: 0.3;
+    
+    color:black;
+}
+
+/*new css*/
+
+.login-box{
+    width:30%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color:white;
+    border: 2px solid transparent; 
+	/*margin-left: 300px; 
+	margin-right: 300px; */
+	padding: 30px;
+	/*border-radius: 25px 25px 25px 25px;*/
+	background-color:black;
+	opacity: 0.8;
+
+}
+
+.login-box h1{
+    float:left;
+    font-size:40px;
+    /*border-bottom: 6px solid ;*/
+    color:#4fc6eb;
+   /* margin-bottom: 1px;*/
+    padding:9px 0;
+}
+
+.text1{
+    width:100%;
+    overflow: hidden;
+    font-size: 5%;
+    padding:4% 0;
+    margin:4% 0;
+    border-bottom:1px solid #4fc6eb;
+}
+
+.text1 i{
+    width:5%;
+    float:left;
+    margin-left:0;
+    text-align: center;
+}
+
+#eye i{
+    width:5%;
+    float:right;
+    text-align: center;
+    padding:6% 0;
+    margin:6% 0;
+    align-items: right;
+
+}
+
+
+
+.text1 input{
+    border:none;
+    background: none;
+    outline:none;
+    color:white;
+    font-size: 1rem;
+    width:80%;
+    float:left;
+    margin:0 6%;
+
+}
+
+.btn{
+    background: none;
+    width:75%;
+    border:2px solid #4fc6eb;
+    color:white;
+    padding:5px;
+    cursor:pointer;
+    margin:12px 0;
+
+}
+
+
+
+
+

@@ -1,0 +1,189 @@
+body{
+    padding:0% ;
+    font-family: Arial, Helvetica, sans-serif;
+    
+
+}
+/*
+.topnav {
+  overflow: hidden;
+  background-color: rgba(250, 240, 243, 0.945);
+  box-shadow:10px 10px 5px  rgb(126, 121, 121);
+}
+
+.topnav a {
+  float: left;
+  color: #0c0a0a;
+  text-align: center;
+  padding: 14px 25px;
+  text-decoration: none;
+  font-size: 17px;
+  
+}
+
+.topnav a:hover {
+  background-color: rgb(8, 7, 7);
+  color: rgb(241, 237, 237);
+}
+
+.topnav a.active {
+  background-color: rgb(5, 5, 5);
+  color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+  
+  li {
+    float: left;
+  }*/
+
+  
+
+  /**new**/
+    /** last one***/
+  * {
+    box-sizing: border-box;
+  }
+  
+  
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color:lightgreen;
+    color:black;
+    cursor: pointer;
+  }
+  
+  /*.navbar .search-container {
+    float: left;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+
+  }*/
+  
+  /*
+  .dropdown-content:hover{
+    display: block;
+  }*/
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    left: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content .header {
+    background: red;
+    padding: 16px;
+    color: white;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 8px;
+    background-color: #ccc;
+    height: 220px;
+  }
+  
+  .column a {
+    float: none;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .column a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .search-container  {
+    float: left;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+
+    
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    padding: 4px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  
+  
+
+  
+  

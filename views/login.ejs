@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">   <!--Kya haal hai?? wo bd1 delete kar na nahi horaha hai -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login page</title>
+</head>
+
+<body>
+        <%include partials/header.ejs%>
+             
+        <% if (typeof status !=='undefined' && status.length>0) {%>
+          
+            <% if(status=='failure'){ %>
+                <div class="w3-panel w3-red" id="alert"  style="background-color: red; font-family:cursive;font-size:2rem;" align="center">  INVALID LOGIN!!</div>
+                <%};%>
+           
+        <%}%>
+<br>
+<!--<center>
+  <form action="/login_submit" method="POST" >
+    <div class="b">
+    
+        <br>
+        
+             <div class="grid-container">   
+                
+             <div class="grid-item" > <i class="fa fa-user" style="font-size:2rem;color:white;"aria-hidden="true"></i></div> 
+             <div class="grid-item" ><input type="text" style="margin-left: -12%;" name="sdrn" id="sdrn"  required></div>
+             <div class="grid-item" > <i class="fa fa-key" style="font-size:2rem;color:white;"aria-hidden="true"></i></div>
+             <div class="grid-item" > <input type="password"   name="pass" id="pass" required><i class="fa fa-eye" style="font-size:24px;" onclick="document.getElementById('pass').setAttribute('type','text');" ></i> </div>
+                 
+                
+            </div>    
+              <br> <br>
+                 <button type="submit">Submit</button>
+     
+            
+        
+             
+                
+
+        </div>
+</form>
+<center>-->
+<form action="/login_submit" method="POST" >
+    
+
+    <div class="login-box">
+            <!--<div class="one"> -->
+
+        <h1 style="align-content: center">ADMIN</h1>
+        <div class="text1">
+                <i class="fa fa-user" style="font-size:1.5rem;color:white;"aria-hidden="true"></i>
+                <input type="text" placeholder="SDRN" name="sdrn" id="sdrn" value="">
+        </div>
+        <div class="text1">
+            <div class="grid-item">
+            <i class="fa fa-lock" style="margin-left:-3%;font-size:1.5rem;color:white;"aria-hidden="true"></i>
+            <input type="password" placeholder="Password" name="pass" id="pass" value="">
+            </div>
+            <i class="fa fa-eye" id="eye" style="font-size:1.5rem;margin-top:-4%;cursor:pointer;"  onclick="document.getElementById('pass').setAttribute('type','text');" ></i>
+       
+        </div>
+           <br> <br>
+      <center>  <button type="submit" class="btn"  >LOGIN</button> </center>
+   
+    </div>
+</form> 
+
+    
+</body>
+<script>
+    setTimeout(()=>{document.getElementById('alert').style.display="none";},3000);
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+
+            
+
+</html>

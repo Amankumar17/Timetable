@@ -12,14 +12,18 @@
             <% var date=[]; var shift=[];  for(var j=0;j<selections.length;j++) {
 
                 if(selections[j].SDRN==professors[i].SDRN){
-                    
+                    if(selections[j].type!=""){
+                        date.push(selections[j].date);
+                        shift.push(selections[j].type);
+
+                    }
 
                 }
 
 
 
-                console.log("YES");
-             };%>
+                
+             }; console.log(date,shift); %>
 
 
           <%};%></body>

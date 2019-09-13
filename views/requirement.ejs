@@ -8,24 +8,168 @@
 </head>
 <body>
 
-    <% for(var i=0;i<professors.length;i++) { %>
-            <% var date=[]; var shift=[];  for(var j=0;j<selections.length;j++) {
-
-                if(selections[j].SDRN==professors[i].SDRN){
-                    if(selections[j].type!=""){
-                        date.push(selections[j].date);
-                        shift.push(selections[j].type);
+   <!--TO DISPLAY PROFESORS FOR PDF-->  
+        <center>  <h1>THIS IS FOR PROFESSORS</h1> </center>
+    <%
+            for(var i=0;i<professors.length;i++){  
+                  var date=[];var shift=[];  
+                  
+                for(var j=0;j<selections.length;j++){
+                    if(professors[i].SDRN==selections[j].SDRN) {
+                            date.push(selections[j].date_of_exam);
+                            
+                            if(selections[j].type=="")  shift.push("BUFFER");
+                            else shift.push(selections[j].type)
 
                     }
 
-                }
+                } %>
+            
+            <table>
+                 <caption> <%=professors[i].SDRN%>    <%=professors[i].UNAME%> </caption>
+                <tr>
+
+                    <th>DATE--></th>
+                   <td>
+                <% for(var k = 0 ; k<date.length ; k++  ){ %>
+                            <%=date[k]%>
+                       <%};%>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th>SHIFT--></th>
+
+                    <td>
+                            <% for(var k = 0 ; k<shift.length ; k++  ){ %>
+                                        <%=shift[k]%>
+                                   <%};%>
+                    </td>
+            
+
+
+                </tr>
+
+            </table>    
+
+            <br>
+            
+            <%}%>
+
+            <!--TO DISPLAY ASSISTANT PROFESORS FOR PDF-->
+
+            <center>  <h1>THIS IS FOR ASSISTANTS-PROFESSORS</h1> </center>
+
+        <%
+            for(var i=0;i<assistants.length;i++){  
+                  var date=[];var shift=[];  
+                  
+                for(var j=0;j<selections.length;j++){
+                    if(assistants[i].SDRN==selections[j].SDRN) {
+                            date.push(selections[j].date_of_exam);
+                            
+                            if(selections[j].type=="")  shift.push("BUFFER");
+                            else shift.push(selections[j].type)
+
+                    }
+
+                } %>
+            
+            <table>
+                 <caption> <%=assistants[i].SDRN%>    <%=assistants[i].UNAME%> </caption>
+                <tr>
+
+                    <th>DATE--></th>
+                   <td>
+                <% for(var k = 0 ; k<date.length ; k++  ){ %>
+                            <%=date[k]%>
+                       <%};%>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th>SHIFT--></th>
+
+                    <td>
+                            <% for(var k = 0 ; k<shift.length ; k++  ){ %>
+                                        <%=shift[k]%>
+                                   <%};%>
+                    </td>
+            
+
+
+                </tr>
+
+            </table>    
+
+            <br>
+            
+            <%}%>
+
+            <!--TO DISPLAY ASSOCIATIVE PROFESSORS-->
+
+            <center>  <h1>THIS IS FOR ASSOCIATIVE-PROFESSORS</h1> </center>
+        <%
+            for(var i=0;i<associates.length;i++){  
+                  var date=[];var shift=[];  
+                  
+                for(var j=0;j<selections.length;j++){
+                    if(associates[i].SDRN==selections[j].SDRN) {
+                            date.push(selections[j].date_of_exam);
+                            
+                            if(selections[j].type=="")  shift.push("BUFFER");
+                            else shift.push(selections[j].type)
+
+                    }
+
+                } %>
+            
+            <table>
+                 <caption> <%=associates[i].SDRN%>    <%=associates[i].UNAME%> </caption>
+                <tr>
+
+                    <th>DATE--></th>
+                   <td>
+                <% for(var k = 0 ; k<date.length ; k++  ){ %>
+                            <%=date[k]%>
+                       <%};%>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th>SHIFT--></th>
+
+                    <td>
+                            <% for(var k = 0 ; k<shift.length ; k++  ){ %>
+                                        <%=shift[k]%>
+                                   <%};%>
+                    </td>
+            
+
+
+                </tr>
+
+            </table>    
+
+            <br>
+            
+            <%}%>
 
 
 
-                
-             }; console.log(date,shift); %>
 
 
-          <%};%></body>
+
+
+
+
+
+
+
+
+</body>
    <link rel="stylesheet" href="/assets/css/requirement.css">
 </html>

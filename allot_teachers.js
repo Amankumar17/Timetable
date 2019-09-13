@@ -44,7 +44,7 @@ time_ut.then((data)=>{
 
             }
 
-            count=count+4
+            count=count+2   /// THIS IS MEANT FOR BUFFER ..
              
 
             console.log(Sum);

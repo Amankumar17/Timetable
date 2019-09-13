@@ -18,7 +18,7 @@ async function solve(){
     console.log(all_dates)
     for(var loop=0;loop<all_dates.length;loop++)
     {
-        var blocks=all_dates[loop].blocks[0]+all_dates[loop].blocks[1]+all_dates[loop].blocks[2]+all_dates[loop].blocks[3]+4
+        var blocks=all_dates[loop].blocks[0]+all_dates[loop].blocks[1]+all_dates[loop].blocks[2]+all_dates[loop].blocks[3]+2
         var prof_contri=Math.round(blocks*(2/14))
         var astp_contri=Math.round(blocks*(8/14))
         var aasp_contri=Math.round(blocks*(4/14))

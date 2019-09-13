@@ -149,8 +149,31 @@ appex.get('/time_ut',function(req,res){
   
 });
 
-appex.get('/requirement',function(req,res){
-  res.render('requirement');
+appex.get('/requirement',(req,res)=>{
+
+  model_prof.find({},(err,professors)=>{
+
+        model_astp.find({},(err,assistants)=>{
+
+            model_asap.find({},(err,associates)=>{
+
+                      
+                                                                                          
+                                              selections.find({},(err,selections)=>{
+                                                if(err) throw err;
+                                                res.render('requirement',{professors,assistants,associates,selections});
+                                              })
+  
+              
+              
+            })
+          
+        })
+
+    
+  })  
+
+ 
 });
 
 
@@ -187,11 +210,16 @@ appex.post('/time',urlencodedParser,function(req,res){
 
 
 appex.post('/time/semester',urlencodedParser,function(req,res){
-          var obj={
+          
+     req.body.blocks[0]=parseInt(req.body.blocks[0])
+      req.body.blocks[1]=parseInt(req.body.blocks[1])
+      var obj={
                 exam:req.body.exam,
                 exdate:req.body.exdate,
-                morning_blocks:parseInt(req.body.morning_blocks),
-                evening_blocks:parseInt(req.body.evening_blocks),
+                blocks:req.body.blocks,
+                //blocks[1]:parseInt(req.body.blocks[1])
+                //morning_blocks:parseInt(req.body.morning_blocks),
+                //evening_blocks:parseInt(req.body.evening_blocks),
                 examtype:req.body.examtype
           }
           console.log(req.body)
@@ -460,6 +488,7 @@ appex.get('/display/result/date-wise',function(req,res){
 
 
 
+
 /// THESE ROUTES ARE JUST DEMO :
 
 appex.post("/sid_reset",urlencodedParser,function(req,res){
@@ -633,7 +662,32 @@ appex.post("/ut_algo",urlencodedParser,function(req,res){
   res.redirect("/perform")
 })
 
-appex.post('/allot_selected',urlencodedParser,(req,res)=>{
+appex.post("/sem_algo",urlencodedParser,function (req,res) {
+  module.exports = {
+    semester_model_time_table:semester_model_time_table,
+    model_prof:model_prof,
+    model_asap:model_asap,
+    model_astp:model_astp,
+    model_selections:selections
+  }
+  var sem_algo=require("./sem.js")
+  res.redirect("/perform")
+})
+
+appex.post("/kt_algo",urlencodedParser,function (req,res) {
+  module.exports = {
+    semester_model_time_table:semester_model_time_table,
+    model_prof:model_prof,
+    model_asap:model_asap,
+    model_astp:model_astp,
+    model_selections:selections
+  }
+  var sem_algo=require("./kt.js")
+  res.redirect("/perform")
+})
+
+
+appex.post('/allot_ut_selected',urlencodedParser,(req,res)=>{
   module.exports = {
     ut_model_time_table:ut_model_time_table,
     model_prof:model_prof,
@@ -642,11 +696,43 @@ appex.post('/allot_selected',urlencodedParser,(req,res)=>{
     model_selections:selections
   }
 
-  var allot_teacher=require("./allot_teachers.js");
+  var allot_teacher=require("./allot_ut_teachers.js");
   res.redirect("/perform")
 
   
 })
+
+
+appex.post('/allot_sem_selected',urlencodedParser,(req,res)=>{
+  module.exports = {
+    semester_model_time_table:semester_model_time_table,
+    model_prof:model_prof,
+    model_astp:model_astp,
+    model_asap:model_asap,
+    model_selections:selections
+  }
+
+  var allot_teacher=require("./allot_sem_teachers.js");
+  res.redirect("/perform")
+
+  
+})
+
+appex.post('/allot_sem_kt_selected',urlencodedParser,(req,res)=>{
+  module.exports = {
+    semester_model_time_table:semester_model_time_table,
+    model_prof:model_prof,
+    model_astp:model_astp,
+    model_asap:model_asap,
+    model_selections:selections
+  }
+
+  var allot_teacher=require("./allot_sem_kt_teachers.js");
+  res.redirect("/perform")
+
+  
+})
+
 
 appex.post("/professors",urlencodedParser,function(req,res){
        console.log("PROFESSORS: ")
@@ -707,7 +793,7 @@ appex.post("/sid_selected",urlencodedParser,function(req,res){
   selections.find({},function(err,data){console.log(data,data.length)}).sort({"date_of_exam":1})
 
   res.redirect("/perform")
-})
+})  
 
 
 appex.post("/delete_selected_teachers",urlencodedParser,function(req,res){
@@ -739,6 +825,13 @@ appex.post("/delete_selected_teachers",urlencodedParser,function(req,res){
   }) 
   res.redirect("/perform")
 })
+
+/*
+semester_model_time_table.deleteMany({},(err,data)=>{
+  console.log("SEM-TIME-TABLE-DELETED");
+  
+})
+*/
 
 /*
 selections.deleteMany({},(err,data) => {

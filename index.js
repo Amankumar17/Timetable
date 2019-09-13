@@ -36,8 +36,9 @@ var semester_timetableSchema= new mongoose.Schema({
   
   exam:String,
   exdate:String,
-  morning_blocks:Number,
-  evening_blocks:Number,
+  blocks:Array,
+  //morning_blocks:Number,
+  //evening_blocks:Number,
   examtype:String
 });
 
@@ -148,6 +149,9 @@ appex.get('/time_ut',function(req,res){
   
 });
 
+appex.get('/requirement',function(req,res){
+  res.render('requirement');
+});
 
 
 

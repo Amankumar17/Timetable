@@ -13,9 +13,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/INVIGILATION',{useNewUrlParser:true}
 
 var criteriaschema = new mongoose.Schema({
       type:String,
-      contriprof :Number,
-      contriassp : Number,
-      contriasst :Number,
+      profcontri :Number,
+      asspcontri : Number,
+      astpcontri :Number,
       buffer_per_slot : Array 
 
 });
@@ -144,9 +144,9 @@ appex.post('/criteria',urlencodedParser,(req,res)=>{
 
           var obj={
             type:req.body.type,
-            contriprof :parseInt(req.body.contriprof),
-              contriassp : parseInt(req.body.contriassp),
-              contriasst :parseInt(req.body.contriasst),
+              profcontri :parseInt(req.body.contriprof),
+              asspcontri : parseInt(req.body.contriassp),
+              astpcontri :parseInt(req.body.contriasst),
               buffer_per_slot : Blocks
           }
 
@@ -958,19 +958,19 @@ selections.deleteMany({},(err,data) => {
   semester_model_time_table.deleteMany({},(err,data)=>{
   console.log("SEMESTER-TIME-TABLE-DELETED");
 
-})
-
+}) */
+/*
 ut_model_time_table.deleteMany({},(err,data)=>{
   console.log("UT-TIME-TABLE-DELETED");
   
-})
+})*/
 
-
+/*
 model_time_table.deleteMany({},(err,data) => {
   delete_confirmation_time_table = "Data deleted"
   console.log("table del")
-})
-*/
+})*/
+
 
 // THIS SCRIPT IS TO CONNECT WITH NODE JS
 /*var tt=require('./db.js')

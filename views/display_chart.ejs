@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DISPLAY CHART</title>
+</head>
+<body>
+        <div id="heading" align="center"></div>
+        <table>
+            <tr>
+        <% for(var i=0;i<timetable.length;i++){ %>
+                    <td><%=timetable[i].exdate%></td>    
+
+                <%};%>
+            </tr>
+            </table>
+
+</body>
+    <script>
+        var arrurl=document.baseURI.split('/') ;
+        if(arrurl[arrurl.length-1]=="sem")
+            document.getElementById('heading').innerHTML="<h1>THIS IS OUTPUT FOR SEMESTER CHART<h1>"
+        else     document.getElementById('heading').innerHTML="<h1>THIS IS OUTPUT FOR UT CHART<h1>"
+        
+
+
+        
+    </script>
+
+</html>

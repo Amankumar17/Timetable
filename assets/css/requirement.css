@@ -2,3 +2,65 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
+/*table*/
+#tt {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #tt td, #tt th {
+    border: 1px solid rgb(15, 13, 13);
+    padding: 4px;
+  }
+  
+  #tt tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #tt tr:hover {background-color: #ddd;}
+  
+  #tt th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    text-align: left;
+    background-color: rgb(199, 241, 253);
+    color: rgb(8, 7, 7);
+    width:10%;
+  }
+  /*box*/
+  .box{
+    border-style: outset;
+    padding:1%;
+    height: auto;
+  }
+  .dashed {border-bottom-style: dashed;}
+
+  .one{
+      float:right;
+      margin-right:4%;
+  }
+  .fa-scissors{
+    left:-3px;
+      display: inline;
+  }
+.nav{
+  background-color:#F9CEBD;
+  
+}
+
+.nav button{
+  color:black;
+  background-color:rgb(240, 196, 200);
+  padding:8px;
+  width:33.3%;
+  border: none;
+  float:left;
+  outline: none;
+  display: inline-block;
+}
+
+button:hover{
+  /*box-shadow: 5px 10px 20px red inset;*/
+  box-shadow: 10px 10px 5px #aaaaaa;
+  background-color: #f79595; 
+}

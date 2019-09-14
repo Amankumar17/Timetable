@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Duties</title>
+</head>
+<body>
+        <%include partials/header.ejs%>
+        <br>
+        <center>
+                sem <label class="switch">
+                     <input type="checkbox" id="type" onclick="check()">
+                   <span class="slider"> </span>
+                  </label> ut
+                  <br><br><br>
+     
+         <!--sem-->         
+       <div class="b"><div class="container">
+             <form action="/action_page.php">
+                <div class="nav" id="select" style="display:none;">
+                    <button>Regular</button>
+                    <button>KT</button>
+                </div>
+                <br><br>
+               <div class="row">
+                 <div class="col-25">
+                   <label for="fname">Professors</label>
+                 </div>
+                 <div class="col-75">
+                   <input type="text" name="contriprof"  pattern="[\d]+" placeholder="No. of Professors">
+                 </div>
+               </div>
+               <div class="row">
+                 <div class="col-25">
+                   <label for="lname"> Assistant</label>
+                 </div>
+                 <div class="col-75">
+                   <input type="text"  name="contriasst" pattern="[\d]+" placeholder=" No. of Assistant">
+                 </div>
+               </div>
+               <div class="row">
+                 <div class="col-25">
+                   <label for="country">Associate</label>
+                 </div>
+                 <div class="col-75">
+                     <input type="text" id="lname" name="contriassp" pattern="[\d]+" placeholder="No. of Associate">
+                 </div>
+               </div>
+               <div class="row">
+                    <div class="col-25">
+                      <label for="country">Buffer</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="" name="lastname" placeholder="Buffer per slot">
+                    </div>
+                  </div>
+               <br>
+               <div class="row">
+                 <input type="submit" value="Submit">
+               </div>
+             </form>
+           </div>
+         </div>
+
+        </center>
+
+   
+
+
+    </body>
+
+    <script>
+      
+      window.onload(document.getElementById('type').checked=false)
+      function check(){
+        document.getElementById("select").style.display="block";
+        document.getElementById("select").checked=true;
+      }
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/duties_input.css">
+ </html>

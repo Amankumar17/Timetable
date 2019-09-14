@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +9,16 @@
     <title>REQUIREMENTS</title>
 </head>
 <body>
-
-   <!--TO DISPLAY PROFESORS FOR PDF-->  
+    
+    <div class="nav" >
+                   <button>PROFESSORS</button> 
+                  <button>ASSISTANTS-PROFESSORS</button> 
+                  <button>ASSOCIATIVE-PROFESSORS</button> 
+            
+            
+    </div>
+    <br>
+    <!--TO DISPLAY PROFESORS FOR PDF-->  
         <center>  <h1>THIS IS FOR PROFESSORS</h1> </center>
     <%
             for(var i=0;i<professors.length;i++){  
@@ -24,13 +34,15 @@
                     }
 
                 } %>
-            
-            <table>
-                 <caption> <%=professors[i].SDRN%>    <%=professors[i].UNAME%> </caption>
+        <div class="box">
+                <caption> SDRN:<%=professors[i].SDRN%>   
+                     Name:<%=professors[i].UNAME%> </caption>
+                <br><br>
+            <table id="tt">
+                 
                 <tr>
-
-                    <th>DATE--></th>
-                   <td>
+                    <th>DATE</th>
+                   <td >
                 <% for(var k = 0 ; k<date.length ; k++  ){ %>
                             <%=date[k]%>
                        <%};%>
@@ -39,22 +51,26 @@
                 </tr>
 
                 <tr>
-                    <th>SHIFT--></th>
-
+                    <th>SHIFT</th>
                     <td>
                             <% for(var k = 0 ; k<shift.length ; k++  ){ %>
                                         <%=shift[k]%>
                                    <%};%>
                     </td>
-            
-
-
                 </tr>
 
-            </table>    
+            </table> <br><br>
+           <div class="one">
+               HOD Sign
+           </div>
+           <div class="one">
+                Principal Sign
+            </div><br>
+        </div>
+            <br>
+           <div class="dashed"><i class="fa fa-scissors" aria-hidden="true"></i></div>
 
             <br>
-            
             <%}%>
 
             <!--TO DISPLAY ASSISTANT PROFESORS FOR PDF-->
@@ -75,35 +91,38 @@
                     }
 
                 } %>
-            
-            <table>
-                 <caption> <%=assistants[i].SDRN%>    <%=assistants[i].UNAME%> </caption>
+                <div class="box">
+                <caption> SDRN:<%=assistants[i].SDRN%>    Name:<%=assistants[i].UNAME%> </caption>
+                <br><br>
+            <table id="tt">
                 <tr>
-
-                    <th>DATE--></th>
-                   <td>
+                    <th>DATE</th>
+                   
                 <% for(var k = 0 ; k<date.length ; k++  ){ %>
-                            <%=date[k]%>
+                           <td> <%=date[k]%></td>
                        <%};%>
-                    </td>
+                    
 
                 </tr>
 
                 <tr>
-                    <th>SHIFT--></th>
-
-                    <td>
-                            <% for(var k = 0 ; k<shift.length ; k++  ){ %>
-                                        <%=shift[k]%>
+                    <th>SHIFT</th>
+                        <% for(var k = 0 ; k<shift.length ; k++  ){ %>
+                                      <td>  <%=shift[k]%></td>
                                    <%};%>
-                    </td>
-            
-
-
+                    
                 </tr>
 
             </table>    
 
+            <br>
+            
+           <div class="one">
+               HOD Sign:
+           </div><br>
+        </div>
+            <br>
+            <div class="dashed"><i class="fa fa-scissors" aria-hidden="true"></i></div>
             <br>
             
             <%}%>
@@ -125,28 +144,27 @@
                     }
 
                 } %>
-            
-            <table>
-                 <caption> <%=associates[i].SDRN%>    <%=associates[i].UNAME%> </caption>
+                <div class="box">
+                <caption>SDRN:<%=associates[i].SDRN%>   Name:<%=associates[i].UNAME%> </caption>
+                <br><br>
+            <table id="tt">
                 <tr>
 
-                    <th>DATE--></th>
-                   <td>
+                    <th>DATE</th>
+                   
                 <% for(var k = 0 ; k<date.length ; k++  ){ %>
-                            <%=date[k]%>
+                            <td><%=date[k]%></td>
                        <%};%>
-                    </td>
 
                 </tr>
 
                 <tr>
-                    <th>SHIFT--></th>
+                    <th>SHIFT</th>
 
-                    <td>
+                    
                             <% for(var k = 0 ; k<shift.length ; k++  ){ %>
-                                        <%=shift[k]%>
+                                       <td> <%=shift[k]%></td>
                                    <%};%>
-                    </td>
             
 
 
@@ -155,6 +173,16 @@
             </table>    
 
             <br>
+            <br>
+            
+           <div class="one">
+               HOD Sign:
+           </div><br>
+        </div>
+            <br>
+            <div class="dashed"><i class="fa fa-scissors" aria-hidden="true"></i></div>
+            <br>
+            
             
             <%}%>
 

@@ -60,7 +60,7 @@ div#FACULTY{
 
 
 div#UPDATE:hover,div#FACULTY:hover{
-    background-color: yellow;
+    background-color: rgb(54, 224, 63);
     border: 0.1px solid black;
 
     

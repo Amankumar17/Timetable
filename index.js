@@ -11,6 +11,14 @@ var mongoose= require('mongoose');
 
 mongoose.connect('mongodb://127.0.0.1:27017/INVIGILATION',{useNewUrlParser:true});
 
+var criteriaschema = new mongoose.Schema({
+      contriprof :Number,
+      contriassp : Number,
+      contriasst :Number,
+      buffer_per_slot : Number 
+
+});
+
 
 var teacherSchema= new mongoose.Schema({
   UNAME:String,
@@ -146,6 +154,50 @@ appex.get('/view/:id',function(req,res){
 
 appex.get('/time_ut',function(req,res){
   res.render('time_ut');
+  
+});
+
+appex.get('/duties_input',function(req,res){
+  res.render('duties_input');
+  
+});
+
+appex.get('/display_chart/:id',function(req,res){
+
+  console.log(req.params.id,typeof(req.params.id))
+  var timetable;
+  if(req.params.id=="ut")
+        timetable=ut_model_time_table;
+  else 
+        timetable=semester_model_time_table;
+  
+
+  model_prof.find({},(professors)=>{
+
+    model_asap.find({},(associates)=>{
+
+      model_astp.find({},(assistants)=>{
+
+        timetable.find({},(timetable)=>{
+
+          console.log("professors",professors,"\n");
+          console.log("associates",associates,"\n");
+          console.log("assistants",assistants,"\n");
+          console.log("timetable",timetable,"\n");
+          
+
+          res.render('display_chart',{professors,assistants,associates,timetable});
+ 
+        }).sort({"exdate":1})
+
+      })
+
+    })
+
+  })
+
+
+
   
 });
 
@@ -802,7 +854,7 @@ appex.post("/delete_selected_teachers",urlencodedParser,function(req,res){
     console.log("selections del")
     })
   
-  /*
+  
   model_prof.deleteMany({},(err,data) => {
   console.log("Professors Deleted.")
   })
@@ -814,7 +866,7 @@ appex.post("/delete_selected_teachers",urlencodedParser,function(req,res){
   model_astp.deleteMany({},(err,data) => {
   console.log("Assistant-Professor Deleted")
   })
-*/
+
   
 
 
@@ -908,6 +960,13 @@ tt.promiseteacher.then( async function(data){
   
 
 })*/
+//model_teacher.deleteMany({"SDRN":"17"})
+module.exports = {
+  model_prof,
+  model_asap,
+  model_astp,
+}
+ //var leftshift=require("./left_shift")
 
 
 appex.listen(5)

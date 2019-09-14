@@ -12,10 +12,11 @@ var mongoose= require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/INVIGILATION',{useNewUrlParser:true});
 
 var criteriaschema = new mongoose.Schema({
+      type:String,
       contriprof :Number,
       contriassp : Number,
       contriasst :Number,
-      buffer_per_slot : Number 
+      buffer_per_slot : Array 
 
 });
 
@@ -119,6 +120,54 @@ var model_time_table= mongoose.model('TIME-TABLE',timetableSchema);
 var semester_model_time_table= mongoose.model('SEMESTER-TIME-TABLE',semester_timetableSchema);
 var ut_model_time_table= mongoose.model('UT-TIME-TABLE',ut_timetableSchema);
 
+var criteria= mongoose.model('CRITERIA',criteriaschema);
+
+
+appex.post('/criteria',urlencodedParser,(req,res)=>{
+  
+  console.log(req.body.type)
+
+  criteria.countDocuments({type:req.body.type},(err,data)=>{
+
+    console.log(data)
+
+          
+          var Blocks=[];
+          Blocks.push(parseInt(req.body.buffer[0]));
+            
+          if(req.body.type=="SEM") {
+            Blocks.push(parseInt(req.body.buffer[1]));
+            
+          }  
+          
+
+
+          var obj={
+            type:req.body.type,
+            contriprof :parseInt(req.body.contriprof),
+              contriassp : parseInt(req.body.contriassp),
+              contriasst :parseInt(req.body.contriasst),
+              buffer_per_slot : Blocks
+          }
+
+          console.log(obj,data)
+          
+      if(data!=0){
+              criteria.updateMany({type:req.body.type},obj,()=>{console.log("UPDATED")})
+      }
+      else{
+          
+             criteria(obj).save(()=>{console.log("CRITERIA ADDED")})
+
+      }
+
+  })      
+
+
+
+  
+
+})
 
 
 
@@ -704,7 +753,8 @@ appex.post("/ut_algo",urlencodedParser,function(req,res){
     model_prof:model_prof,
     model_astp:model_astp,
     model_asap:model_asap,
-    model_selections:selections
+    model_selections:selections,
+    criteria:criteria
   }
   var ut_algo=require("./ut.js")
 
@@ -720,7 +770,8 @@ appex.post("/sem_algo",urlencodedParser,function (req,res) {
     model_prof:model_prof,
     model_asap:model_asap,
     model_astp:model_astp,
-    model_selections:selections
+    model_selections:selections,
+    criteria
   }
   var sem_algo=require("./sem.js")
   res.redirect("/perform")
@@ -732,7 +783,8 @@ appex.post("/kt_algo",urlencodedParser,function (req,res) {
     model_prof:model_prof,
     model_asap:model_asap,
     model_astp:model_astp,
-    model_selections:selections
+    model_selections:selections,
+    criteria
   }
   var sem_algo=require("./kt.js")
   res.redirect("/perform")
@@ -745,7 +797,8 @@ appex.post('/allot_ut_selected',urlencodedParser,(req,res)=>{
     model_prof:model_prof,
     model_astp:model_astp,
     model_asap:model_asap,
-    model_selections:selections
+    model_selections:selections,
+    criteria
   }
 
   var allot_teacher=require("./allot_ut_teachers.js");
@@ -761,7 +814,8 @@ appex.post('/allot_sem_selected',urlencodedParser,(req,res)=>{
     model_prof:model_prof,
     model_astp:model_astp,
     model_asap:model_asap,
-    model_selections:selections
+    model_selections:selections,
+    criteria
   }
 
   var allot_teacher=require("./allot_sem_teachers.js");
@@ -776,7 +830,8 @@ appex.post('/allot_sem_kt_selected',urlencodedParser,(req,res)=>{
     model_prof:model_prof,
     model_astp:model_astp,
     model_asap:model_asap,
-    model_selections:selections
+    model_selections:selections,
+    criteria
   }
 
   var allot_teacher=require("./allot_sem_kt_teachers.js");
@@ -879,11 +934,20 @@ appex.post("/delete_selected_teachers",urlencodedParser,function(req,res){
 })
 
 /*
+criteria.deleteMany({},(err,data)=>{
+  console.log("CRITERIA DELETED");
+  
+})*/
+
+
+/*
 semester_model_time_table.deleteMany({},(err,data)=>{
   console.log("SEM-TIME-TABLE-DELETED");
   
 })
 */
+
+
 
 /*
 selections.deleteMany({},(err,data) => {

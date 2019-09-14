@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,76 +9,117 @@
 <body>
         <%include partials/header.ejs%>
         <br>
+        <form action="/criteria" method="POST" >
         <center>
-                sem <label class="switch">
-                     <input type="checkbox" id="type" onclick="check()">
+                UT <label class="switch">
+                     <input type="checkbox" id="type" onclick="check();" >
                    <span class="slider"> </span>
-                  </label> ut
+                  </label> SEM
                   <br><br><br>
+
+                  <input type="text" name="type" id="choice" style="display:none" value="UT" >
      
-         <!--sem-->         
+         <!--sem-->
+                
        <div class="b"><div class="container">
-             <form action="/action_page.php">
+             
                 <div class="nav" id="select" style="display:none;">
                     <button>Regular</button>
                     <button>KT</button>
                 </div>
-                <br><br>
-               <div class="row">
+
+                <br>
+                
+                <div class="row">
                  <div class="col-25">
                    <label for="fname">Professors</label>
                  </div>
                  <div class="col-75">
-                   <input type="text" name="contriprof"  pattern="[\d]+" placeholder="No. of Professors">
+                   <input type="text" name="contriprof"  pattern="[\d]+" placeholder="Max No. of duties for Professors" required>
                  </div>
-               </div>
-               <div class="row">
+                </div>
+
+                <br>
+                
+                <div class="row">
                  <div class="col-25">
                    <label for="lname"> Assistant</label>
                  </div>
                  <div class="col-75">
-                   <input type="text"  name="contriasst" pattern="[\d]+" placeholder=" No. of Assistant">
+                   <input type="text"  name="contriasst" pattern="[\d]+" placeholder="Max No. of duties for Assistant Professors" required>
                  </div>
-               </div>
-               <div class="row">
+                </div>
+                
+                <br>
+                
+                <div class="row">
                  <div class="col-25">
-                   <label for="country">Associate</label>
+                   <label for="country">Associative</label>
                  </div>
                  <div class="col-75">
-                     <input type="text" id="lname" name="contriassp" pattern="[\d]+" placeholder="No. of Associate">
+                     <input type="text" id="lname" name="contriassp" pattern="[\d]+" placeholder="Max No. of duties for Associative Professors" required>
                  </div>
-               </div>
-               <div class="row">
+                </div>
+                
+                <br>
+                <div class="row">
                     <div class="col-25">
                       <label for="country">Buffer</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="" name="lastname" placeholder="Buffer per slot">
+                        <input type="text" id="buffer1" name="buffer" pattern="[\d]+" placeholder="Buffer per slot" required>
                     </div>
-                  </div>
+                </div>
+                <br>
+                <div class="row" id="buf2" >
+                    <div class="col-25">
+                      <label for="country">Buffer</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="buffer2" name="buffer" pattern="[\d]+" placeholder="" value="0" required>
+                    </div>
+                </div>
                <br>
-               <div class="row">
-                 <input type="submit" value="Submit">
-               </div>
-             </form>
-           </div>
+               
+            </div>
          </div>
+       
 
         </center>
-
-   
-
+        
+        <button type="submit">SUBMIT</button>
+        
+      </form>
 
     </body>
 
     <script>
+   
       
-      window.onload(document.getElementById('type').checked=false)
-      function check(){
-        document.getElementById("select").style.display="block";
-        document.getElementById("select").checked=true;
+      
+    function check(){
+      if(document.getElementById('type').checked==true)
+      {
+              document.getElementById('buf2').style.display="block";
+              document.getElementById('buffer1').setAttribute('placeholder','Buffer per slot (REGULAR)');
+              document.getElementById('buffer2').setAttribute('placeholder','Buffer per slot (KT)');
+              document.getElementById('buffer2').setAttribute('value','');
+              document.getElementById('choice').setAttribute('value','SEM');
+              
+      
       }
+      else{
+        document.getElementById('buf2').style.display="none";
+        document.getElementById('buffer1').setAttribute('placeholder','Buffer per slot');
+        document.getElementById('choice').setAttribute('value','UT');
+        document.getElementById('buffer2').setAttribute('value','');
+      }
+    }
+  
+
     </script>
 
     <link rel="stylesheet" href="/assets/css/duties_input.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
  </html>

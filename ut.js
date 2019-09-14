@@ -12,19 +12,21 @@ console.log("FOR UT : \n")
 
 obj.criteria.find({"type":"UT"},(err,data)=>{
 
+    console.log(data)
     async function solve(){
 
         await time_ut.then( async (all_dates)=>{
        
            //var selected_time_table=[]
            //console.log(all_dates)
-           var total=data.profcontri+data.astpcontri+data.asspcontri
+           var total=data[0].profcontri+data[0].astpcontri+data[0].asspcontri
+           console.log(total)
            for(var loop=0;loop<all_dates.length;loop++)
            {
-               var blocks=all_dates[loop].blocks[0]+all_dates[loop].blocks[1]+all_dates[loop].blocks[2]+all_dates[loop].blocks[3]+2
-               var prof_contri=Math.round(blocks*(data.profcontri/total))
-               var astp_contri=Math.round(blocks*(data.astpcontri/total))
-               var aasp_contri=Math.round(blocks*(data.asspcontri/total))
+               var blocks=all_dates[loop].blocks[0]+all_dates[loop].blocks[1]+all_dates[loop].blocks[2]+all_dates[loop].blocks[3]+4*data[0].buffer_per_slot[0]
+               var prof_contri=Math.round(blocks*(data[0].profcontri/total))
+               var astp_contri=Math.round(blocks*(data[0].astpcontri/total))
+               var aasp_contri=Math.round(blocks*(data[0].asspcontri/total))
                console.log("BLOCKS ARE: ",blocks,"PROF HAS ",prof_contri,"ASST-PROF HAS ",astp_contri,"ASSCP-PROF HAS ",aasp_contri)
                
        

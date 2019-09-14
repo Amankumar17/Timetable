@@ -504,12 +504,35 @@ appex.get('/home',(req,res)=>{
 
 appex.post('/update/time_table/sem',urlencodedParser,function(req,res){
       
-       console.log("FOR UPDATE SEMESTER: ",req.body)
-      for(var i=0;i<req.body.exdate.length;++i)
+  var sid=Object.entries(req.body.blocks)
+  console.log(req.body,req.body.blocks)
+  var tmp=[]
+  var i=0
+  while(i<req.body.blocks.length)
+  {
+    var smtp=[]
+    if(i%2==0) {var smtp=[parseInt(req.body.blocks[i])] ; i++;}
+  
+      while(i%2!=0)
       {
+          smtp.push(parseInt(req.body.blocks[i]))
+          i++
+      }
+      tmp.push(smtp)
+  }
+
+
+ 
+
+     console.log("FOR UPDATE SEMESTER: ",req.body)
+       var j=0;
+      for(var i=0;i<req.body.exdate.length;i++)
+      {  
         try{
-          semester_model_time_table.updateOne({exdate:req.body.exdate[i]},{morning_blocks:(req.body.morning_blocks[i]),evening_blocks:(req.body.evening_blocks[i])},(err,data)=>{})
-   
+   //       semester_model_time_table.updateOne({exdate:req.body.exdate[i]},{morning_blocks:(req.body.morning_blocks[i]),evening_blocks:(req.body.evening_blocks[i])},(err,data)=>{})
+       //     console.log(req.body)
+    semester_model_time_table.updateOne({exdate:req.body.exdate[i]},{blocks:tmp[i]},(err,data)=>{})
+            
          }
          catch(exe){console.log(exe)}
          
@@ -517,8 +540,7 @@ appex.post('/update/time_table/sem',urlencodedParser,function(req,res){
       }
 
       res.redirect('/display_semester_time_table')
-      //var arr=Object.entries(req.body)
-      //console.log(arr)
+      
 })
 
 appex.post('/update/time_table/ut',urlencodedParser,function(req,res){
@@ -909,7 +931,7 @@ appex.post("/delete_selected_teachers",urlencodedParser,function(req,res){
     console.log("selections del")
     })
   
-  
+  /*
   model_prof.deleteMany({},(err,data) => {
   console.log("Professors Deleted.")
   })
@@ -921,15 +943,10 @@ appex.post("/delete_selected_teachers",urlencodedParser,function(req,res){
   model_astp.deleteMany({},(err,data) => {
   console.log("Assistant-Professor Deleted")
   })
-
-  
-
-
-
   model_teacher.deleteMany({},(err,data) => {
   delete_confirmation_teacher = "Data deleted"
   console.log("teacher del")
-  }) 
+  }) */
   res.redirect("/perform")
 })
 

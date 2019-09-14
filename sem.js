@@ -13,7 +13,7 @@ console.log("FOR SEM : \n")
 console.log(obj.criteria)
 
 obj.criteria.find({"type":"SEM"},(err,data)=>{
-    //console.log(data)
+    console.log(data)
 
     async function solve(){
 
@@ -21,13 +21,13 @@ obj.criteria.find({"type":"SEM"},(err,data)=>{
        
            //var selected_time_table=[]
            //console.log(all_dates)
-           var total=data.profcontri+data.astpcontri+data.asspcontri
+           var total=data[0].profcontri+data[0].astpcontri+data[0].asspcontri
            for(var loop=0;loop<all_dates.length;loop++)
            {
-               var blocks=all_dates[loop].blocks[0]+all_dates[loop].blocks[1]+2
-               var prof_contri=Math.round(blocks*(data.profcontri/total))
-               var astp_contri=Math.round(blocks*(data.astpcontri/total))
-               var aasp_contri=Math.round(blocks*(data.asspcontri/total))
+               var blocks=all_dates[loop].blocks[0]+all_dates[loop].blocks[1]+2*data[0].buffer_per_slot[0]
+               var prof_contri=Math.round(blocks*(data[0].profcontri/total))
+               var astp_contri=Math.round(blocks*(data[0].astpcontri/total))
+               var aasp_contri=Math.round(blocks*(data[0].asspcontri/total))
                console.log("BLOCKS ARE: ",blocks,"PROF HAS ",prof_contri,"ASST-PROF HAS ",astp_contri,"ASSCP-PROF HAS ",aasp_contri)
                
        

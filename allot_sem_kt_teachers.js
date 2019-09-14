@@ -11,7 +11,13 @@ var sorted_select = obj.model_selections.find({}).sort({"date_of_selection":1}).
 
 console.log(obj.criteria)
 
-obj.criteria.find({type:"SEM"},(err,data)=>{
+
+//Note ---->>>delete selected teacher from "selections" but not "sid reset" so as to maintain duties for both regular and kt
+
+
+
+
+obj.criteria.find({type:"SEM"},(err,datacri)=>{
     time_sem.then((data)=>{
         console.log(data)
     
@@ -46,7 +52,7 @@ obj.criteria.find({type:"SEM"},(err,data)=>{
     
                 }
     
-                count=count+data.buffer_per_slot[1]   /// THIS IS MEANT FOR BUFFER ..
+                count=count+2*datacri[0].buffer_per_slot[1]   /// THIS IS MEANT FOR BUFFER ..
                  
     
                 console.log(Sum);

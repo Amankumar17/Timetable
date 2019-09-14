@@ -14,8 +14,8 @@ var sorted_select = obj.model_selections.find({}).sort({"date_of_selection":1}).
 console.log(obj.criteria)
 
 
-obj.criteria.find({type:"UT"},(err,data)=>{
-                console.log(data)
+obj.criteria.find({type:"UT"},(err,datacri)=>{
+                console.log(datacri)
                 time_ut.then((data)=>{
                     console.log(data)
 
@@ -50,10 +50,10 @@ obj.criteria.find({type:"UT"},(err,data)=>{
 
                             }
 
-                            count=count+data.buffer_per_slot[0]   /// THIS IS MEANT FOR BUFFER ..
+                            count=count+4*datacri[0].buffer_per_slot[0]   /// THIS IS MEANT FOR BUFFER ..
                             
 
-                            console.log(Sum);
+                            console.log(count,"=count");
 
                         
 

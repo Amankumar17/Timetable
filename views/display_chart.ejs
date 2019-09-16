@@ -73,12 +73,14 @@
                       %>
 
                       <%for(var I=0;I<result.length;I++){%>
-                          <% if(result[I]==2){ %> <td style="background: red"><i class="fa fa-check" aria-hidden="true"></i></td> 
-                          <%} else if(result[I]==1){ %> <td style="background: red"></td> 
-                          <%} else{%> <td style="background: white"></td> <%};%>
-                          
-                          
-                      <%};%>
+                            <% if(check[I]==1 && buff[I]==1){ %> <td style="background: red"><i class="fa fa-check-circle"></i></td> 
+                            <%} else if(check[I]==1){ %> <td ><i class="fa fa-check-circle"></td> 
+                            <%} else if(buff[I]==1){ %> <td style="background: red"></td> 
+                              
+                            <%} else {%> <td style="background: white"></td> <%};%>
+                            
+                            
+                        <%};%>
   
                 </tr>
                 <%}%>
@@ -125,12 +127,14 @@
                           %>
     
                           <%for(var I=0;I<result.length;I++){%>
-                              <% if(result[I]==2){ %> <td style="background: red"><i class="fa fa-check-circle"></i></td> 
-                              <%} else if(result[I]==1){ %> <td style="background: red"></td> 
-                              <%} else{%> <td style="background: white"></td> <%};%>
-                              
-                              
-                          <%};%>
+                                <% if(check[I]==1 && buff[I]==1){ %> <td style="background: red"><i class="fa fa-check-circle"></i></td> 
+                                <%} else if(check[I]==1){ %> <td ><i class="fa fa-check-circle"></td> 
+                                <%} else if(buff[I]==1){ %> <td style="background: red"></td> 
+                                  
+                                <%} else {%> <td style="background: white"></td> <%};%>
+                                
+                                
+                            <%};%>
       
                     </tr>
                     <%}%>

@@ -42,6 +42,7 @@ input#exam{
 
 .card{
     box-shadow: 5px 5px 5px 5px grey; 
+    height:50%;
     
 }
 

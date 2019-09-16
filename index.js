@@ -219,23 +219,26 @@ appex.get('/display_chart/:id',function(req,res){
         timetable=ut_model_time_table;
   else 
         timetable=semester_model_time_table;
-  
+   
 
-  model_prof.find({},(professors)=>{
+selections.find({},(err,selected)=>{
+  model_prof.find({},(err,professors)=>{
 
-    model_asap.find({},(associates)=>{
+    model_asap.find({},(err,associates)=>{
 
-      model_astp.find({},(assistants)=>{
+      model_astp.find({},(err,assistants)=>{
 
-        timetable.find({},(timetable)=>{
+        timetable.find({},(err,timetable)=>{
 
-          console.log("professors",professors,"\n");
-          console.log("associates",associates,"\n");
-          console.log("assistants",assistants,"\n");
-          console.log("timetable",timetable,"\n");
+          var tt= Object.entries(timetable);
           
+          var TT=[]
 
-          res.render('display_chart',{professors,assistants,associates,timetable});
+          for(var i=0;i<tt.length;i++)
+                TT.push(tt[i][1].exdate)
+          console.log(TT)
+
+          res.render('display_chart',{professors,assistants,associates,timetable,selected,timetab:TT});
  
         }).sort({"exdate":1})
 
@@ -246,7 +249,7 @@ appex.get('/display_chart/:id',function(req,res){
   })
 
 
-
+})
   
 });
 

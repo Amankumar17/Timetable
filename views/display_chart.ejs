@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+        <link rel="stylesheet" href="../assets/css/display_chart.css">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +9,218 @@
     <title>DISPLAY CHART</title>
 </head>
 <body>
-        <div id="heading" align="center"></div>
-        <table>
+        
+        <div id="heading" align="center" value="" ></div>
+        
+        <table id="tt"> 
+               
             <tr>
+                <td rowspan="2" style="background-color:rgb(199, 241, 253);">Teacher Name</td>
         <% for(var i=0;i<timetable.length;i++){ %>
-                    <td><%=timetable[i].exdate%></td>    
+                    <th colspan="<%=timetable[i].blocks.length%>" style="text-align: center;" ><%=timetable[i].exdate%></th>    
 
                 <%};%>
             </tr>
-            </table>
+            <tr>
+            <% for(var i=0;i<timetable.length;i++){ %>
+                     <% var  blocks=timetable[i].blocks; console.log(blocks); 
+                            for(var j=0;j<blocks.length;j++){ %>
+                            <td>TIME-SLOT <%=(j+1)%></td>
+                                
+                    <%}};%>
+            </tr>
+
+            
+             <!--THIS IS  PROFESSORS  CHART DISPLAY-->
+           
+
+            <%for(var i=0;i<professors.length;i++){%>
+                <tr>
+                    <td>
+                        <%=professors[i].UNAME%>
+                    </td>
+
+                   <%
+                      var lmt=timetable.length*timetable[0].blocks.length;
+                      var increfact=timetable[0].blocks.length;
+                      var check=[];var buff=[];
+                      for(var I=0;I<lmt;I++) {check.push(0);buff.push(0);}
+                      for(var I=0;I<selected.length;I++){
+                          if(selected[I].SDRN==professors[i].SDRN) {
+                              var ind=4*timetab.indexOf(selected[I].date_of_exam);
+                              if(selected[I].type==""){
+                                    var incr=increfact;
+                                    for(var J=0;J<incr;J++)
+                                        buff[ind+J]=1;
+
+                                    }
+                              else {
+                                  var arr=selected[I].split(' ')
+                                  var disp=parseInt(arr[arr.length-1])
+                                  check[ind+disp-1]=1;
+                              }
+                               
+                          }
+                      }
+
+                      var result=[];
+                      for(var I=0;I<check.length;I++){
+                          result.push(check[I]+buff[I]);
+                      }
+                      console.log("RESULT IS",result,"\n")
+                      console.log("CHECK IS ",check,"\n");
+                      console.log("BUFFER IS ",buff,"\n")
+                      %>
+
+                      <%for(var I=0;I<result.length;I++){%>
+                          <% if(result[I]==2){ %> <td style="background: red"><i class="fa fa-check" aria-hidden="true"></i></td> 
+                          <%} else if(result[I]==1){ %> <td style="background: red"></td> 
+                          <%} else{%> <td style="background: white"></td> <%};%>
+                          
+                          
+                      <%};%>
+  
+                </tr>
+                <%}%>
+
+
+            <!--THIS IS  ASSOCIATES CHART DISPLAY-->
+                
+            <%for(var i=0;i<associates.length;i++){%>
+                    <tr>
+                        <td>
+                            <%=associates[i].UNAME%>
+                        </td>
+    
+                       <%
+                          var lmt=timetable.length*timetable[0].blocks.length;
+                          var increfact=timetable[0].blocks.length;
+                          var check=[];var buff=[];
+                          for(var I=0;I<lmt;I++) {check.push(0);buff.push(0);}
+                          for(var I=0;I<selected.length;I++){
+                              if(selected[I].SDRN==associates[i].SDRN) {
+                                  var ind=4*timetab.indexOf(selected[I].date_of_exam);
+                                  if(selected[I].type==""){
+                                        var incr=increfact;
+                                        for(var J=0;J<incr;J++)
+                                            buff[ind+J]=1;
+    
+                                        }
+                                  else {
+                                      var arr=selected[I].split(' ')
+                                      var disp=parseInt(arr[arr.length-1])
+                                      check[ind+disp-1]=1;
+                                  }
+                                   
+                              }
+                          }
+    
+                          var result=[];
+                          for(var I=0;I<check.length;I++){
+                              result.push(check[I]+buff[I]);
+                          }
+                          console.log("RESULT IS",result,"\n")
+                          console.log("CHECK IS ",check,"\n");
+                          console.log("BUFFER IS ",buff,"\n")
+                          %>
+    
+                          <%for(var I=0;I<result.length;I++){%>
+                              <% if(result[I]==2){ %> <td style="background: red"><i class="fa fa-check-circle"></i></td> 
+                              <%} else if(result[I]==1){ %> <td style="background: red"></td> 
+                              <%} else{%> <td style="background: white"></td> <%};%>
+                              
+                              
+                          <%};%>
+      
+                    </tr>
+                    <%}%>
+
+                
+            <!--THIS IS ASSISTANTS DISPLAY -->
+
+
+            
+            <%for(var i=0;i<assistants.length;i++){%>
+                    <tr>
+                        <td>
+                            <%=assistants[i].UNAME%>
+                        </td>
+    
+                       <%
+                          var lmt=timetable.length*timetable[0].blocks.length;
+                          var increfact=timetable[0].blocks.length;
+                          var check=[];var buff=[];
+                          for(var I=0;I<lmt;I++) {check.push(0);buff.push(0);}
+                          for(var I=0;I<selected.length;I++){
+                              if(selected[I].SDRN==assistants[i].SDRN) {
+                                  var ind=4*timetab.indexOf(selected[I].date_of_exam);
+                                  if(selected[I].type==""){
+                                        var incr=increfact;
+                                        for(var J=0;J<incr;J++)
+                                            buff[ind+J]=1;
+    
+                                        }
+                                  else {
+                                      var arr=selected[I].type.split(' ')
+                                      console.log("Arrays is",arr)
+                                      var disp=parseInt(arr[arr.length-1])
+                                      console.log("INDEX OF DATE IS : ",ind, " displacement is :  ",disp)
+                                      check[ind+disp-1]=1;
+                                  }
+                                   
+                              }
+                          }
+    
+                          var result=[];
+                          for(var I=0;I<check.length;I++){
+                              result.push(check[I]+buff[I]);
+                          }
+                          console.log("RESULT IS",result,"\n")
+                          console.log("CHECK IS ",check,"\n");
+                          console.log("BUFFER IS ",buff,"\n")
+                          %>
+    
+                          <%for(var I=0;I<result.length;I++){%>
+                              <% if(check[I]==1 && buff[I]==1){ %> <td style="background: red"><i class="fa fa-check-circle"></i></td> 
+                              <%} else if(check[I]==1){ %> <td ><i class="fa fa-check-circle"></td> 
+                              <%} else if(buff[I]==1){ %> <td style="background: red"></td> 
+                                
+                              <%} else {%> <td style="background: white"></td> <%};%>
+                              
+                              
+                          <%};%>
+      
+                    </tr>
+                    <%}%>
+
+
+
+
+
+
+                    
+    
+
+        </table>
 
 </body>
     <script>
         var arrurl=document.baseURI.split('/') ;
         if(arrurl[arrurl.length-1]=="sem")
-            document.getElementById('heading').innerHTML="<h1>THIS IS OUTPUT FOR SEMESTER CHART<h1>"
-        else     document.getElementById('heading').innerHTML="<h1>THIS IS OUTPUT FOR UT CHART<h1>"
+           {
+            document.getElementById('heading').innerHTML="<h1>THIS IS OUTPUT FOR SEMESTER CHART<h1>";
+                document.getElementById('heading').setAttribute('value',"SEM");
+           } 
+        else  {
+            document.getElementById('heading').setAttribute('value',"UT");
+            document.getElementById('heading').innerHTML="<h1>THIS IS OUTPUT FOR UT CHART<h1>"
         
+        }   
 
 
         
     </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </html>

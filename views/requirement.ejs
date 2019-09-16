@@ -11,14 +11,13 @@
 <body>
     
     <div class="nav" >
-                   <button>PROFESSORS</button> 
-                  <button>ASSISTANTS-PROFESSORS</button> 
-                  <button>ASSOCIATIVE-PROFESSORS</button> 
-            
-            
+                   <button onclick="appear(0)" >PROFESSORS</button> 
+                  <button onclick="appear(1)">ASSISTANTS-PROFESSORS</button> 
+                  <button onclick="appear(2)">ASSOCIATIVE-PROFESSORS</button> 
     </div>
     <br>
-    <!--TO DISPLAY PROFESORS FOR PDF-->  
+            <!--TO DISPLAY PROFESORS FOR PDF-->  
+        <div id="container-professor"> 
         <center>  <h1>THIS IS FOR PROFESSORS</h1> </center>
     <%
             for(var i=0;i<professors.length;i++){  
@@ -72,9 +71,9 @@
 
             <br>
             <%}%>
-
+        </div>
             <!--TO DISPLAY ASSISTANT PROFESORS FOR PDF-->
-
+        <div id="container-assistants">
             <center>  <h1>THIS IS FOR ASSISTANTS-PROFESSORS</h1> </center>
 
         <%
@@ -126,9 +125,9 @@
             <br>
             
             <%}%>
-
+        </div>
             <!--TO DISPLAY ASSOCIATIVE PROFESSORS-->
-
+        <div id="container-associates">
             <center>  <h1>THIS IS FOR ASSOCIATIVE-PROFESSORS</h1> </center>
         <%
             for(var i=0;i<associates.length;i++){  
@@ -187,17 +186,20 @@
             <%}%>
 
 
-
-
-
-
-
-
-
-
-
+        </div>
 
 
 </body>
+   <script>
+       function appear(index){
+            const ar=['container-professor','container-assistants',"container-associates"]
+
+            for(var i=0;i<ar.length;i++){
+                if(i<index || i>index)
+                document.getElementById(ar[i]).style.display="none";
+            }
+            document.getElementById(ar[index]).style.display="block";
+       }
+   </script>
    <link rel="stylesheet" href="/assets/css/requirement.css">
 </html>

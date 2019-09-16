@@ -778,7 +778,7 @@ appex.post("/ut_algo",urlencodedParser,function(req,res){
     model_selections:selections,
     criteria:criteria
   }
-  var ut_algo=require("./ut.js")
+   var ut_algo=require("./ut.js")
 
   //var allot_teacher=require("./allot_teachers.js");
 

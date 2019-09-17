@@ -11,9 +11,9 @@
 <body>
     
     <div class="nav" >
-                   <button onclick="appear(0)" >PROFESSORS</button> 
-                  <button onclick="appear(1)">ASSISTANTS-PROFESSORS</button> 
-                  <button onclick="appear(2)">ASSOCIATIVE-PROFESSORS</button> 
+                   <button onclick="appear(0)" id="0"  >PROFESSORS</button> 
+                  <button onclick="appear(1)" id="1" >ASSISTANTS-PROFESSORS</button> 
+                  <button onclick="appear(2)" id="2">ASSOCIATIVE-PROFESSORS</button> 
     </div>
     <br>
             <!--TO DISPLAY PROFESORS FOR PDF-->  
@@ -24,7 +24,7 @@
                   var date=[];var shift=[];  
                   
                 for(var j=0;j<selections.length;j++){
-                    if(professors[i].SDRN==selections[j].SDRN) {
+                    if(professors[i].SDRN==selections[j].SDRN  ) {
                             date.push(selections[j].date_of_exam);
                             
                             if(selections[j].type=="")  shift.push("BUFFER");
@@ -41,29 +41,29 @@
                  
                 <tr>
                     <th>DATE</th>
-                   <td >
+                   
                 <% for(var k = 0 ; k<date.length ; k++  ){ %>
-                            <%=date[k]%>
+                    <td><%=date[k]%></td>
                        <%};%>
-                    </td>
+                    
 
                 </tr>
 
                 <tr>
                     <th>SHIFT</th>
-                    <td>
+                    
                             <% for(var k = 0 ; k<shift.length ; k++  ){ %>
-                                        <%=shift[k]%>
+                                <td> <%=shift[k]%> </td>
                                    <%};%>
-                    </td>
+                   
                 </tr>
 
-            </table> <br><br>
+            </table> <br><br><br>
            <div class="one">
-               HOD Sign
+            Principal Sign
            </div>
-           <div class="one">
-                Principal Sign
+           <div class="one" style="float:left;">
+            HOD Sign
             </div><br>
         </div>
             <br>
@@ -112,13 +112,14 @@
                     
                 </tr>
 
-            </table>    
-
-            <br>
-            
-           <div class="one">
-               HOD Sign:
-           </div><br>
+            </table>
+            <br><br><br>
+            <div class="one">
+                HOD Sign
+            </div>
+            <div class="one" style="float:left;">
+                 Principal Sign
+             </div><br>
         </div>
             <br>
             <div class="dashed"><i class="fa fa-scissors" aria-hidden="true"></i></div>
@@ -169,14 +170,19 @@
 
                 </tr>
 
-            </table>    
+            </table> 
+            <br><br><br>
+            <div class="one">
+                HOD Sign
+            </div>
+            <div class="one" style="float:left;">
+                 Principal Sign
+             </div><br>
+    
 
-            <br>
+            
             <br>
             
-           <div class="one">
-               HOD Sign:
-           </div><br>
         </div>
             <br>
             <div class="dashed"><i class="fa fa-scissors" aria-hidden="true"></i></div>
@@ -190,16 +196,26 @@
 
 
 </body>
-   <script>
-       function appear(index){
-            const ar=['container-professor','container-assistants',"container-associates"]
 
-            for(var i=0;i<ar.length;i++){
-                if(i<index || i>index)
-                document.getElementById(ar[i]).style.display="none";
-            }
-            document.getElementById(ar[index]).style.display="block";
-       }
-   </script>
+
+    
+
+    <script >
+        function appear(index){
+
+const ar=['container-professor','container-assistants',"container-associates"]
+
+for(var i=0;i<ar.length;i++){
+    if(i<index || i>index)
+    document.getElementById(ar[i]).style.display="none";
+    
+    document.getElementById(i).style.backgroundColor="rgb(240, 196, 200)";
+
+}
+document.getElementById(ar[index]).style.display="block";
+document.getElementById(index).style.backgroundColor="lightcoral";
+
+}
+    </script>
    <link rel="stylesheet" href="/assets/css/requirement.css">
 </html>

@@ -59,7 +59,7 @@ body{
       
     }
   
-    i.fa.fa-user,i.fa.fa-clock-o,i.fa.fa-cogs,i.fa.fa-refresh,i.fa.fa-eye,i.fa.fa-pencil-square-o{
+    i.fa.fa-user,i.fa.fa-clock-o,i.fa.fa-cogs,i.fa.fa-refresh,i.fa.fa-table,i.fa.fa-pencil-square-o{
       -webkit-transform: scale(0.25);
       -webkit-transform-origin-x: 20%;
       
@@ -71,7 +71,7 @@ s
 
 }
 
-  i.fa.fa-user,i.fa.fa-clock-o,i.fa.fa-cogs,i.fa.fa-refresh,i.fa.fa-eye,i.fa.fa-pencil-square-o{
+  i.fa.fa-user,i.fa.fa-clock-o,i.fa.fa-cogs,i.fa.fa-refresh,i.fa.fa-table,i.fa.fa-pencil-square-o{
       font-size: 10rem;
   }
   

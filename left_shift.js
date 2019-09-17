@@ -7,56 +7,57 @@ var obj= require('./index.js');
 //var time_sem = obj.semester_model_time_table.find({"examtype":"KT"}).sort({"exdate":1}).exec()
 
 var sync=require('sync')
- min=1
- max=10
-console.log(Math.floor(Math.random() * (max - min + 1) + min))
+ 
+
 
 
 async function professor () {
-    await obj.model_prof.find({}).then((professors)=>{
+    await obj.model_prof.find({}).then(async (professors)=>{
+        var min=1
+        var max=professors.length-1
+        var reslt = []
+           var prof= Object.entries(professors);
+        
+            var rand=Math.floor(Math.random() * (max - min + 1) + min)
+            var start=prof.slice(0,rand)
+            for(var i=rand;i<professors.length;i++)
+            {
+                reslt.push(prof[i])
+                
+            }
+            for(var i=0;i<rand;i++)
+            {
+                reslt.push(prof[i])
+            }
+            console.log(professors,rand,"=random val")
+            await obj.model_prof.deleteMany({},()=>{console.log("DEleted")})
 
-        for(var i=0;i<professors.length;i++){
-
-            var object={
-                UNAME:professors[i].UNAME,
-                SDRN:professors[i].SDRN,
-                DEPT:professors[i].DEPT,
-                DESIG:professors[i].DESIG,
-                DUTIES:professors[i].DUTIES,
-                REG_COUNT:professors[i].REG_COUNT,
-                KT_COUNT:professors[i].KT_COUNT
+            var pushprof=[];
+                for(var i=0;i<professors.length;i++)
+                {
+                    var pf = {
+                        UNAME:reslt[i][1].UNAME,
+                        SDRN:reslt[i][1].SDRN,
+                        DEPT:reslt[i][1].DEPT,
+                        DESIG:reslt[i][1].DESIG,
+                        DUTIES:reslt[i][1].DUTIES,
+                        REG_COUNT:reslt[i][1].REG_COUNT,
+                        KT_COUNT:reslt[i][1].KT_COUNT,
+  
                     }
-           
-            obj.model_prof.deleteOne({_id:professors[i]._id});
-            obj.model_prof(object).save();
-
-        }
-
-         //  var prof= Object.entries(professors);
-          /*var prof=[]
-
-          for(var i=0;i<professors.length;i++)
-               prof.push(professors[i])
-            var number=Math.floor(Math.random() * (max - min + 1) + min);
-           while(number!=0){
-          prof.push(  prof.shift());
-            number--;
-              
+                    pushprof.push(pf);
+                    //console.log(prof[i],typeof(prof[i]))
+            //        await obj.model_prof(pf).save(function(err,data){console.log("SHIFTED",err,data);})
                 }
-            console.log(typeof(prof))
-            var resprof=[];
 
-            for(var i=0;i<prof.length;i++)
-                resprof.push(prof[i])
+                await obj.model_prof.insertMany(pushprof,()=>{console.log("SHIFTED")})
             
-                console.log("AFTER : ",resprof);
-             
-            //     obj.model_prof(resprof).save();
-            // for(var i=0;i<resprof.length;i++)
-                 // obj.model_prof(resprof[i]).save(()=>{console.log("success")})
-                 
-                */
             
+            
+            
+            
+
+
     })
 
     
@@ -66,3 +67,115 @@ async function professor () {
 }
 
 professor();
+
+
+async function assosciate () {
+    await obj.model_asap.find({}).then(async (assosciates)=>{
+        var min=1
+        var max=assosciates.length-1
+        var reslt = []
+           var prof= Object.entries(assosciates);
+        
+            var rand=Math.floor(Math.random() * (max - min + 1) + min)
+            var start=prof.slice(0,rand)
+            for(var i=rand;i<assosciates.length;i++)
+            {
+                reslt.push(prof[i])
+                
+            }
+            for(var i=0;i<rand;i++)
+            {
+                reslt.push(prof[i])
+            }
+            console.log(assosciates,rand,"=random val")
+            await obj.model_asap.deleteMany({},()=>{console.log("DEleted")})
+
+            var pushprof=[];
+                for(var i=0;i<assosciates.length;i++)
+                {
+                    var pf = {
+                        UNAME:reslt[i][1].UNAME,
+                        SDRN:reslt[i][1].SDRN,
+                        DEPT:reslt[i][1].DEPT,
+                        DESIG:reslt[i][1].DESIG,
+                        DUTIES:reslt[i][1].DUTIES,
+                        REG_COUNT:reslt[i][1].REG_COUNT,
+                        KT_COUNT:reslt[i][1].KT_COUNT,
+  
+                    }
+                    pushprof.push(pf);
+                   
+                }
+
+                await obj.model_asap.insertMany(pushprof,()=>{console.log("SHIFTED")})
+            
+            
+            
+            
+            
+
+
+    })
+
+    
+    
+    
+}
+
+assosciate();
+
+
+
+async function assistant () {
+    await obj.model_astp.find({}).then(async (assistants)=>{
+        var min=1
+        var max=assistants.length-1
+        var reslt = []
+           var prof= Object.entries(assistants);
+        
+            var rand=Math.floor(Math.random() * (max - min + 1) + min)
+            var start=prof.slice(0,rand)
+            for(var i=rand;i<assistants.length;i++)
+            {
+                reslt.push(prof[i])
+                
+            }
+            for(var i=0;i<rand;i++)
+            {
+                reslt.push(prof[i])
+            }
+            console.log(assistants,rand,"=random val")
+            await obj.model_astp.deleteMany({},()=>{console.log("DEleted")})
+
+            var pushprof=[];
+                for(var i=0;i<assistants.length;i++)
+                {
+                    var pf = {
+                        UNAME:reslt[i][1].UNAME,
+                        SDRN:reslt[i][1].SDRN,
+                        DEPT:reslt[i][1].DEPT,
+                        DESIG:reslt[i][1].DESIG,
+                        DUTIES:reslt[i][1].DUTIES,
+                        REG_COUNT:reslt[i][1].REG_COUNT,
+                        KT_COUNT:reslt[i][1].KT_COUNT,
+  
+                    }
+                    pushprof.push(pf);
+                    
+                }
+
+                await obj.model_astp.insertMany(pushprof,()=>{console.log("SHIFTED")})
+            
+      
+            
+
+
+    })
+
+    
+   
+    
+    
+}
+
+assistant();

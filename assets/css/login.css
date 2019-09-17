@@ -1,10 +1,13 @@
 body{
     margin: 0;
     padding:0;
-    background:url('../images/rait2.jpg') no-repeat ;
+    background:url('../images/bd.jpg') no-repeat ;
     font-family: sans-serif;
-    background-size: 100%;
+    background-size: cover;
     background-position-y: 5%;
+    height:100%;
+    background-position: center;
+
     }
 
 fieldset{

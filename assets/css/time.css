@@ -3,7 +3,7 @@ body{
     padding:0;
     background:url('../images/bd.jpg') no-repeat ;
     font-family: sans-serif;
-    background-size: 100%;
+    background-size: cover;
     background-position-y: 15%;
     
 }
@@ -47,7 +47,7 @@ input#exam{
 }
 
 input[type="text"],input[type="date"]{
-    width: 200%;
+    width:10%;
 }
 
 div#UPDATE{

@@ -1,214 +1,207 @@
 body{
-    background:url('../images/bd.jpg');
-    font-family: sans-serif;
-    overflow: hidden;
-    background-size: cover;
-    background-position-x: -100%;
-    }
-  
-   *{ box-sizing:border-box;
-    }
-  table{border-collapse:collapse;
-      width:100%;
-    margin-left:15%;}
-    
-  
-  
-  .button {
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 12px;
-    color: white;
-    width:30%;
-    height:18%;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    margin: 4px 2px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  
+  background:url('../images/bd.jpg');
+  font-family: sans-serif;
+  overflow: hidden;
+  background-size: cover;
+  background-position-x: -100%;
   }
 
-  .but1{
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    width:49.5%;
-    height:18%;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    margin: 4px 0px 10% 0px;
-    cursor: pointer;
+ *{ box-sizing:border-box;
   }
-    .but1:hover{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border:0.1px solid rgb(128, 123, 123);
-    }
+table{border-collapse:collapse;
+    width:100%;
+  margin-left:15%;}
   
 
 
-  .topnav {
-    overflow: hidden;
-    background-color: rgb(240, 142, 142);
-  }
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /*.grid-container{
-    display: grid;
-    grid-template-columns: auto auto;
-    
+.button {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  width:30%;
+  height:18%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
+.but1{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  width:49.5%;
+  height:18%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 0px 10% 0px;
+  cursor: pointer;
+}
+  .but1:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border:0.1px solid rgb(128, 123, 123);
+  }
+
+
+
+.topnav {
+  overflow: hidden;
+  background-color: rgb(240, 142, 142);
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/*.grid-container{
+  display: grid;
+  grid-template-columns: auto auto;
+  
+}
 .grid-item{
-    font-family: cursive;
-    width:auto;
-    height:50%;
-    padding:10px;
-    cursor:pointer;
-    margin:0;
-    
+  font-family: cursive;
+  width:auto;
+  height:50%;
+  padding:10px;
+  cursor:pointer;
+  margin:0;
+  
 }*/
-  
-  
-  td, th {
-    border: none;
-    text-align: left;
-    padding: 0.2rem;;
-  }
-  
-  
-  p.one{float:left;
-             }
-  .card{
-    width: 45rem;
 
-    height: auto;
-    padding: 5px;
-    background-color:#FDFFFB;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin:5%;
-    text-align: center;}
-  
-  div.container {
-    padding: 10px;
-  }
-  
-  p.three{font-family:Lucida Bright;
-  font-size:16px;}
-  
-  @media only screen and (max-width: 800px) {
-    body {
-      width: 100%;
-    }
-    img{
-      width: 100%;
-    }
-    input#name,input{
-      width:60%;
-    }
-  
-  
-  
-  }
-  
-  .row::after{
-      content:'';
-      clear: both;
-      display: block;
-  }
 
-  .nav{
-    background-color: lightcoral;
-    padding: 8px;
-    margin:1% 2%;
-    height: 5%;
+td, th {
+  border: none;
+  text-align: left;
+  padding: 0.2rem;;
+}
+
+
+p.one{float:left;
+           }
+.card{
+  width: 45rem;
+
+  height: auto;
+  padding: 5px;
+  background-color:#FDFFFB;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:5%;
+  text-align: center;}
+
+div.container {
+  padding: 10px;
+}
+
+p.three{font-family:Lucida Bright;
+font-size:16px;}
+
+@media only screen and (max-width: 800px) {
+  body {
+    width: 100%;
   }
-
-  ul{
-    padding:0;
-    margin: 0;
-    float:left;
-
+  img{
+    width: 100%;
   }
-  li{
-    display:inline;
-    color:white;
-    padding:8px;
-
+  input#name,input{
+    width:60%;
   }
-
-  
 
 
 
-  
-  /*nav style
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 10;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
+}
+
+.row::after{
+    content:'';
+    clear: both;
     display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
+}
+
+.nav{
+  background-color: lightcoral;
+  padding: 8px;
+  margin:1% 2%;
+  height: 5%;
+}
+
+ul{
+  padding:0;
+  margin: 0;
+  float:left;
+
+}
+li{
+  display:inline;
+  color:white;
+  padding:8px;
+
+}
+
+
+
+
+
+
+/*nav style
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+.navbar a {
+  float: right;
   
-  li a:hover:not(.active) {
-    background-color: #111;
-  }
+  color: rgb(218, 19, 19);
+  font-size:30%;
+  text-decoration: none;
+  font-size:10px;
   
-  .active {
-    background-color: #4CAF50;
-  }
+}
+
+.navbar a:hover {
+  background-color:#D2CFD3;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+@media screen and (max-width: 500px) {
   .navbar a {
     float: right;
     
-    color: rgb(218, 19, 19);
-    font-size:30%;
-    text-decoration: none;
-    font-size:10px;
-    
   }
-  
-  .navbar a:hover {
-    background-color:#D2CFD3;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  
-  }
-  
-  @media screen and (max-width: 500px) {
-    .navbar a {
-      float: right;
-      
-    }
-  }
-  
-  
-  
-  
-  
-  
+}

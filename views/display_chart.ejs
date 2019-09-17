@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-        <link rel="stylesheet" href="../assets/css/display_chart.css">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DISPLAY CHART</title>
+    <base href="/">
 </head>
 <body>
         
         <div id="heading" align="center" value="" ></div>
         
-        <table id="tt"> 
+        <table > 
                
             <tr>
-                <td rowspan="2" style="background-color:rgb(199, 241, 253);">Teacher Name</td>
+                <td rowspan="2" style="background-color:rgb(199, 241, 253);width:12%;">Teacher Name</td>
         <% for(var i=0;i<timetable.length;i++){ %>
                     <th colspan="<%=timetable[i].blocks.length%>" style="text-align: center;" ><%=timetable[i].exdate%></th>    
 
@@ -47,7 +47,7 @@
                       for(var I=0;I<lmt;I++) {check.push(0);buff.push(0);}
                       for(var I=0;I<selected.length;I++){
                           if(selected[I].SDRN==professors[i].SDRN) {
-                              var ind=4*timetab.indexOf(selected[I].date_of_exam);
+                              var ind=increfact*timetab.indexOf(selected[I].date_of_exam);
                               if(selected[I].type==""){
                                     var incr=increfact;
                                     for(var J=0;J<incr;J++)
@@ -55,7 +55,7 @@
 
                                     }
                               else {
-                                  var arr=selected[I].split(' ')
+                                  var arr=selected[I].type.split(' ')
                                   var disp=parseInt(arr[arr.length-1])
                                   check[ind+disp-1]=1;
                               }
@@ -74,8 +74,8 @@
 
                       <%for(var I=0;I<result.length;I++){%>
                             <% if(check[I]==1 && buff[I]==1){ %> <td style="background: red"><i class="fa fa-check-circle"></i></td> 
-                            <%} else if(check[I]==1){ %> <td ><i class="fa fa-check-circle"></td> 
-                            <%} else if(buff[I]==1){ %> <td style="background: red"></td> 
+                            <%} else if(check[I]==1){ %> <td><i class="fa fa-check-circle"></td> 
+                            <%} else if(buff[I]==1){ %> <td style="background: red;border-collapse: collapse;"></td> 
                               
                             <%} else {%> <td style="background: white"></td> <%};%>
                             
@@ -101,7 +101,7 @@
                           for(var I=0;I<lmt;I++) {check.push(0);buff.push(0);}
                           for(var I=0;I<selected.length;I++){
                               if(selected[I].SDRN==associates[i].SDRN) {
-                                  var ind=4*timetab.indexOf(selected[I].date_of_exam);
+                                  var ind=increfact*timetab.indexOf(selected[I].date_of_exam);
                                   if(selected[I].type==""){
                                         var incr=increfact;
                                         for(var J=0;J<incr;J++)
@@ -109,7 +109,7 @@
     
                                         }
                                   else {
-                                      var arr=selected[I].split(' ')
+                                      var arr=selected[I].type.split(' ')
                                       var disp=parseInt(arr[arr.length-1])
                                       check[ind+disp-1]=1;
                                   }
@@ -157,7 +157,7 @@
                           for(var I=0;I<lmt;I++) {check.push(0);buff.push(0);}
                           for(var I=0;I<selected.length;I++){
                               if(selected[I].SDRN==assistants[i].SDRN) {
-                                  var ind=4*timetab.indexOf(selected[I].date_of_exam);
+                                  var ind=increfact*timetab.indexOf(selected[I].date_of_exam);
                                   if(selected[I].type==""){
                                         var incr=increfact;
                                         for(var J=0;J<incr;J++)
@@ -198,32 +198,33 @@
                     <%}%>
 
 
-
-
-
-
-                    
-    
-
         </table>
 
 </body>
     <script>
         var arrurl=document.baseURI.split('/') ;
-        if(arrurl[arrurl.length-1]=="sem")
+        if(arrurl[arrurl.length-1]=="REGULAR")
            {
-            document.getElementById('heading').innerHTML="<h1>THIS IS OUTPUT FOR SEMESTER CHART<h1>";
-                document.getElementById('heading').setAttribute('value',"SEM");
+            document.getElementById('heading').innerHTML="<h1>THIS IS OUTPUT FOR REGULAR SEMESTER CHART<h1>";
+                document.getElementById('heading').setAttribute('value',"REGULAR");
+                
            } 
+        else if(arrurl[arrurl.length-1]=="KT"){
+            document.getElementById('heading').innerHTML="<h1>THIS IS OUTPUT FOR KT SEMESTER CHART<h1>";
+                document.getElementById('heading').setAttribute('value',"KT");
+            
+        }
         else  {
             document.getElementById('heading').setAttribute('value',"UT");
-            document.getElementById('heading').innerHTML="<h1>THIS IS OUTPUT FOR UT CHART<h1>"
+            document.getElementById('heading').innerHTML="<h1>THIS IS OUTPUT FOR UT CHART<h1>";
         
         }   
 
 
+
         
     </script>
+    <link rel="stylesheet" href="../assets/css/display_chart.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 

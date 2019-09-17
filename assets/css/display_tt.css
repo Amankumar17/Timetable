@@ -52,7 +52,7 @@ span{
 button{
     border: 0.1rem solid black;
     font-size: 2rem;
-    background: red;
+    background: rgb(168, 218, 252);
     border-radius: 3px;
     cursor: pointer;
     position: sticky;
@@ -92,9 +92,10 @@ table {
 
   }
 
-  
-  tr:nth-child(even) {
-    background-color: #69f7a4;
+  #tt tr:nth-child(even){background-color: #beb8b8;}
+
+ tr:nth-child(even) {
+    background-color:rgb(201, 204, 201);
   }
  
    

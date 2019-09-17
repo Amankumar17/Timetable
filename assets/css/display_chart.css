@@ -1,28 +1,25 @@
-
-
-#tt {
+table{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    border:1px solid black;
   }
-  
-  #tt td, #tt th {
+   td, th {
     border: 1px solid rgb(15, 13, 13);
     padding: 4px;
     text-align: center;
-    width:1.12%;
   }
   
-  #tt tr:nth-child(even){background-color: #f2f2f2;}
+   tr:nth-child(even){background-color: #f2f2f2;}
   
-  #tt tr:hover {background-color: #ddd;}
+   tr:hover {background-color: #ddd;}
   
-  #tt th {
+   th {
     padding-top: 12px;
     padding-bottom: 12px;
     padding-left: 12px;
     text-align: left;
     background-color: rgb(199, 241, 253);
     color: rgb(8, 7, 7);
-    width:10%;
+    width:8%;
   }

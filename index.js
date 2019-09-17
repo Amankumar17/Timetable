@@ -211,14 +211,19 @@ appex.get('/duties_input',function(req,res){
   
 });
 
-appex.get('/display_chart/:id',function(req,res){
+appex.get('/teacher1',function(req,res){
+  res.render('teacher1');
+  
+});
 
-  console.log(req.params.id,typeof(req.params.id))
+
+
+
+appex.get('/display_chart/ut',function(req,res){
+
+  //console.log(req.params.id,typeof(req.params.id))
   var timetable;
-  if(req.params.id=="ut")
-        timetable=ut_model_time_table;
-  else 
-        timetable=semester_model_time_table;
+  timetable=ut_model_time_table;
    
 
 selections.find({},(err,selected)=>{
@@ -251,7 +256,54 @@ selections.find({},(err,selected)=>{
 
 })
   
+
 });
+
+
+appex.get('/display_chart/sem/:id',(req,res)=>{
+  console.log(req.params.id,typeof(req.params.id))
+  var timetable=semester_model_time_table;
+  var finds="REGULAR";
+  if(req.params.id=="KT") finds="KT";
+        
+
+            selections.find({},(err,selected)=>{
+              model_prof.find({},(err,professors)=>{
+
+                model_asap.find({},(err,associates)=>{
+
+                  model_astp.find({},(err,assistants)=>{
+
+                    timetable.find({examtype:finds},(err,timetable)=>{
+                      
+                      
+                      var tt= Object.entries(timetable);
+                      
+                      var TT=[]
+
+                      for(var i=0;i<tt.length;i++){
+                        if(tt[i][1].examtype==finds)
+                          TT.push(tt[i][1].exdate)
+                      }
+                            
+                      console.log(TT)
+
+                      res.render('display_chart',{professors,assistants,associates,timetable,selected,timetab:TT});
+            
+                    }).sort({"exdate":1})
+
+                  })
+
+                })
+
+              })
+
+
+        })
+});
+
+
+
 
 appex.get('/requirement',(req,res)=>{
 
@@ -443,6 +495,10 @@ appex.post('/teacher',urlencodedParser,function(req,res){
 
 appex.get('/perform',function(req,res){
     res.render("perform")
+})
+
+appex.get('/execute',function (req,res) {
+      res.render("execute")
 })
 
 appex.post('/perform',function(req,res){
@@ -686,7 +742,7 @@ appex.post("/sid_reset",urlencodedParser,function(req,res){
   
   })
   
-  res.redirect("/perform")
+  res.redirect("/execute")
 
 })
 
@@ -782,11 +838,11 @@ appex.post("/ut_algo",urlencodedParser,function(req,res){
     criteria:criteria
   }
    var ut_algo=require("./ut.js")
-
+    
   //var allot_teacher=require("./allot_teachers.js");
 
 
-  res.redirect("/perform")
+  res.redirect("/execute")
 })
 
 appex.post("/sem_algo",urlencodedParser,function (req,res) {
@@ -799,7 +855,7 @@ appex.post("/sem_algo",urlencodedParser,function (req,res) {
     criteria
   }
   var sem_algo=require("./sem.js")
-  res.redirect("/perform")
+  res.redirect("/execute")
 })
 
 appex.post("/kt_algo",urlencodedParser,function (req,res) {
@@ -812,7 +868,7 @@ appex.post("/kt_algo",urlencodedParser,function (req,res) {
     criteria
   }
   var sem_algo=require("./kt.js")
-  res.redirect("/perform")
+  res.redirect("/execute")
 })
 
 
@@ -827,7 +883,7 @@ appex.post('/allot_ut_selected',urlencodedParser,(req,res)=>{
   }
 
   var allot_teacher=require("./allot_ut_teachers.js");
-  res.redirect("/perform")
+  res.redirect("/execute")
 
   
 })
@@ -844,7 +900,7 @@ appex.post('/allot_sem_selected',urlencodedParser,(req,res)=>{
   }
 
   var allot_teacher=require("./allot_sem_teachers.js");
-  res.redirect("/perform")
+  res.redirect("/execute")
 
   
 })
@@ -860,11 +916,21 @@ appex.post('/allot_sem_kt_selected',urlencodedParser,(req,res)=>{
   }
 
   var allot_teacher=require("./allot_sem_kt_teachers.js");
-  res.redirect("/perform")
+  res.redirect("/execute")
 
   
 })
 
+appex.post('/shift',urlencodedParser,(req,res)=>{
+  module.exports = {
+    model_prof,
+    model_asap,
+    model_astp
+  }
+  var shift = require("./left_shift.js")
+  res.redirect("/perform")
+
+})
 
 appex.post("/professors",urlencodedParser,function(req,res){
        console.log("PROFESSORS: ")
@@ -924,7 +990,7 @@ appex.post("/sid_selected",urlencodedParser,function(req,res){
   console.log("SELECTED TEACHERS : \n")
   selections.find({},function(err,data){console.log(data,data.length)}).sort({"date_of_exam":1})
 
-  res.redirect("/perform")
+  res.redirect("/execute")
 })  
 
 
@@ -933,7 +999,14 @@ appex.post("/delete_selected_teachers",urlencodedParser,function(req,res){
   selections.deleteMany({},(err,data) => {
     console.log("selections del")
     })
-  
+    
+    module.exports = {
+      model_prof,
+      model_asap,
+      model_astp
+    }
+    var shift = require("./left_shift.js")
+    
   /*
   model_prof.deleteMany({},(err,data) => {
   console.log("Professors Deleted.")
@@ -950,7 +1023,7 @@ appex.post("/delete_selected_teachers",urlencodedParser,function(req,res){
   delete_confirmation_teacher = "Data deleted"
   console.log("teacher del")
   }) */
-  res.redirect("/perform")
+  res.redirect("/execute")
 })
 
 /*
@@ -1045,12 +1118,6 @@ tt.promiseteacher.then( async function(data){
 
 })*/
 //model_teacher.deleteMany({"SDRN":"17"})
-module.exports = {
-  model_prof,
-  model_asap,
-  model_astp,
-}
- //var leftshift=require("./left_shift")
 
 
 appex.listen(5)

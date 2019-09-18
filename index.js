@@ -16,7 +16,7 @@ var criteriaschema = new mongoose.Schema({
       profcontri :Number,
       asspcontri : Number,
       astpcontri :Number,
-      buffer_per_slot : Array 
+      buffer_per_slot : [0,0] 
 
 });
 
@@ -133,10 +133,10 @@ appex.post('/criteria',urlencodedParser,(req,res)=>{
 
           
           var Blocks=[];
-          Blocks.push(parseInt(req.body.buffer[0]));
+          Blocks.push(0);
             
           if(req.body.type=="SEM") {
-            Blocks.push(parseInt(req.body.buffer[1]));
+            Blocks.push(0);
             
           }  
           
@@ -216,15 +216,21 @@ appex.get('/teacher1',function(req,res){
   
 });
 
+appex.get('/time1',function(req,res){
+  res.render('time1');
+  
+});
 
 
 
-appex.get('/display_chart/ut',function(req,res){
+appex.get('/display_chart/:id',function(req,res){
 
   //console.log(req.params.id,typeof(req.params.id))
-  var timetable;
-  timetable=ut_model_time_table;
-   
+  var timetable=ut_model_time_table;
+  console.log(req.params.id)
+  if (req.params.id=="sem")
+    timetable=semester_model_time_table;
+  
 
 selections.find({},(err,selected)=>{
   model_prof.find({},(err,professors)=>{
@@ -259,12 +265,10 @@ selections.find({},(err,selected)=>{
 
 });
 
-
-appex.get('/display_chart/sem/:id',(req,res)=>{
-  console.log(req.params.id,typeof(req.params.id))
+/*
+appex.get('/display_chart/sem',(req,res)=>{
+  
   var timetable=semester_model_time_table;
-  var finds="REGULAR";
-  if(req.params.id=="KT") finds="KT";
         
 
             selections.find({},(err,selected)=>{
@@ -274,7 +278,7 @@ appex.get('/display_chart/sem/:id',(req,res)=>{
 
                   model_astp.find({},(err,assistants)=>{
 
-                    timetable.find({examtype:finds},(err,timetable)=>{
+                    timetable.find({},(err,timetable)=>{
                       
                       
                       var tt= Object.entries(timetable);
@@ -282,7 +286,6 @@ appex.get('/display_chart/sem/:id',(req,res)=>{
                       var TT=[]
 
                       for(var i=0;i<tt.length;i++){
-                        if(tt[i][1].examtype==finds)
                           TT.push(tt[i][1].exdate)
                       }
                             
@@ -300,7 +303,7 @@ appex.get('/display_chart/sem/:id',(req,res)=>{
 
 
         })
-});
+});*/
 
 
 

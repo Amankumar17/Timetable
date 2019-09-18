@@ -71,3 +71,59 @@ a{
     color: black;
     text-decoration: none;
 }
+
+
+@media only screen and (max-width:600px){
+    body{
+        margin: 0;
+    padding:0;
+    background:url('../images/bd.jpg') no-repeat ;
+    font-family: sans-serif;
+    background-size: cover;
+    background-position-y: 15%;
+    
+    }
+    .card{
+        box-shadow: 5px 5px 5px 5px grey; 
+        height:auto;
+        
+    }
+
+ .grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 0.5rem;
+    width: fit-content;
+
+ }
+ .card{
+     width: fit-content;
+ }
+    
+input[type="text"],input[type="date"]{
+    width:5%;
+}
+    
+
+}
+
+
+@media only screen and (max-width:300px){
+    .card{
+        box-shadow: 5px 5px 5px 5px grey; 
+        height:auto;
+        
+    }
+        
+}
+
+
+
+@media only screen and (max-width:800px){
+    .card{
+        box-shadow: 5px 5px 5px 5px grey; 
+        height:auto;
+        
+    }
+        
+}

@@ -61,25 +61,7 @@
                  </div>
                 </div>
                 
-                <br>
-                <div class="row">
-                    <div class="col-25">
-                      <label for="country">Buffer</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="text" id="buffer1" name="buffer" pattern="[\d]+" placeholder="Buffer per slot" required>
-                    </div>
-                </div>
-                <br>
-                <div class="row" id="buf2" >
-                    <div class="col-25">
-                      <label for="country">Buffer</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="text" id="buffer2" name="buffer" pattern="[\d]+" placeholder="" value="0" required>
-                    </div>
-                </div>
-               <br>
+                
                <div class="row">
                   <button type="submit" class="button">SUBMIT</button>
 
@@ -103,19 +85,19 @@
     function check(){
       if(document.getElementById('type').checked==true)
       {
-              document.getElementById('buf2').style.display="block";
-              document.getElementById('buffer1').setAttribute('placeholder','Buffer per slot (REGULAR)');
-              document.getElementById('buffer2').setAttribute('placeholder','Buffer per slot (KT)');
-              document.getElementById('buffer2').setAttribute('value','');
+              //document.getElementById('buf2').style.display="block";
+              //document.getElementById('buffer1').setAttribute('placeholder','Buffer per slot (REGULAR)');
+              //document.getElementById('buffer2').setAttribute('placeholder','Buffer per slot (KT)');
+              //document.getElementById('buffer2').setAttribute('value','');
               document.getElementById('choice').setAttribute('value','SEM');
               
       
       }
       else{
-        document.getElementById('buf2').style.display="none";
-        document.getElementById('buffer1').setAttribute('placeholder','Buffer per slot');
+        //document.getElementById('buf2').style.display="none";
+        //document.getElementById('buffer1').setAttribute('placeholder','Buffer per slot');
         document.getElementById('choice').setAttribute('value','UT');
-        document.getElementById('buffer2').setAttribute('value','');
+        //document.getElementById('buffer2').setAttribute('value','');
       }
     }
   

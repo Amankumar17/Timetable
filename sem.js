@@ -4,7 +4,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/INVIGILATION',{useNewUrlParser:true}
 
 var obj= require('./index.js');
 
-var time_sem = obj.semester_model_time_table.find({"examtype":"REGULAR"}).sort({"exdate":1}).exec()
+var time_sem = obj.semester_model_time_table.find({}).sort({"exdate":1}).exec()
 
 var sync=require('sync')
 

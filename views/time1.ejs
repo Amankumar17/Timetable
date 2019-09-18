@@ -19,14 +19,25 @@
                 
        <div class="b">
            <div class="container">
-             
-               
+                <div class="row">
+                        <div class="col-75">
+                                <button class="button">SEM</button>
+                        </div>
+                        <div class="col-75">
+                                <button class="button">UT</button>
+                        </div>
+                </div>
+       
+                <!--<div class="nav" id="select">
+                    <button>SEM</button>
+                    <button>UT</button>
+                </div>-->
 
                 <br>
                 
                 <div class="row">
                  <div class="col-25">
-                   <label for="fname">Name</label>
+                   <label for="fname">Date</label>
                  </div>
                  <div class="col-75">
                    <input type="text" name=""   placeholder="" required>
@@ -37,10 +48,13 @@
                 
                 <div class="row">
                  <div class="col-25">
-                   <label for="lname"> SDRN</label>
+                   <label for="lname"> Type</label>
                  </div>
                  <div class="col-75">
-                   <input type="text"  name="contriasst"  placeholder="" required>
+                        <input type="radio" name="examtype" id="examtype1" value="REGULAR" required> 
+                        <label for="type1" id="val1"   style="margin-right: 5rem; width:2rem;">REGULAR</label> 
+                        <input type="radio" name="examtype" id="examtype2" value="KT" required> 
+                        <label for="type2" id="val2"  style="width:2rem;" >KT</label>
                  </div>
                 </div>
                 
@@ -48,32 +62,20 @@
                 
                 <div class="row">
                  <div class="col-25">
-                   <label for="country">Deaprtment</label>
+                   <label for="country">Morning Block</label>
                  </div>
                  <div class="col-75">
-                         
-                    <select  name="DEPT" id="department">
-                    <option value="ENGINEERING SCIENCES"> ENGINEERING SCIENCES</option>
-                    <option value="COMPUTER ENGINEERING" > COMPUTER ENGINEERING </option>
-                    <option value="INFORMATION TECHNOLOGY" > INFORMATION TECHNOLOGY </option>
-                    <option value="ELECTRONICS ENGINEERING"> ELECTRONICS ENGINEERING </option>
-                    <option value="ELECTRONICS & TELECOMMUNICATION ENGINEERING"> ELECTRONICS & TELECOMMUNICATION ENGINEERING </option>
-                    <option value="INSTRUMENTATION ENGINEERING"> INSTRUMENTATION ENGINEERING </option>
-                    </select>    
+                        <input type="text" id="blocks" name="blocks"  value="0" required>
                  </div>
                 </div>
                 
                 <br>
                 <div class="row">
                     <div class="col-25">
-                      <label for="country">Designation:</label>
+                      <label for="country">Evening Block</label>
                     </div>
                     <div class="col-75">
-                            <select  name="DESIG" id="designation" onchange="dut()"">
-                                    <option value="PROFESSOR" selected> PROFESSOR </option>
-                                    <option value="ASSISTANT-PROFESSOR">ASSISTANT-PROFESSOR </option>
-                                    <option value="ASSOCIATE-PROFESSOR">ASSOCIATE-PROFESSOR </option>
-                                    </select>    
+                            <input type="text" id="blocks" name="blocks"  value="0" required>
                     </div>
                 </div>
                 <br>
@@ -128,7 +130,7 @@
 
     </script>-->
 
-    <link rel="stylesheet" href="/assets/css/teacher1.css">
+    <link rel="stylesheet" href="/assets/css/time1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
  </html>

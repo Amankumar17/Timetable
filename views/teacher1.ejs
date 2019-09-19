@@ -5,13 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Teacher</title>
+    <title>ENTER TEACHER DETAILS!!</title>
 </head>
 <body>
         <%include partials/header.ejs%>
-        <br>
-        <form action="/teacher1" method="POST" >
+        <div class="topnav">
+
+          <a href="/login">Home</a>
+          <a id="UPDATE"  title="VIEW TIME TABLE AND UPDATE NUMBER OF BLOCKS ONLY!!" 
+            href="/display_teacher" id="target" target="_blank" >View/UPDATE</a>
+        <a id="FACULTY"  style="float:left;"  title="INPUT TIME-TABLE!!" href="/time" target="_blank" >TIME-TABLE-INPUT</a>
+            
+      </div>
+  
+        
+        <form action="/teacher" method="POST" >
         <center>
+            <% if (typeof data !=='undefined' && data.length>0) {%>
+          
+              <% if(data=='failure'){ %>
+                  <div class="w3-panel w3-red" id="alert"  style="background-color: red">DATA COULD NOT BE LOADED!!</div>
+                  
+                  <%};%>
+          <%}%>
+  
+          <% if (typeof data !=='undefined' && data.length>0) {%>
+            
+              <% if(data=='success'){ %>
+                  <div class="w3-panel w3-green" id="alert" style="background-color: green">SAVED SUCCESSFULLY</div>
+                  <%};%>
+             
+          <%}%>
+          <br>
+         
                
                   
      
@@ -29,7 +55,7 @@
                    <label for="fname">Name</label>
                  </div>
                  <div class="col-75">
-                   <input type="text" name=""   placeholder="" required>
+                   <input type="text" id="name" name="UNAME"   placeholder="" required>
                  </div>
                 </div>
 
@@ -40,7 +66,7 @@
                    <label for="lname"> SDRN</label>
                  </div>
                  <div class="col-75">
-                   <input type="text"  name="contriasst"  placeholder="" required>
+                   <input type="text"  name="SDRN" placeholder="" required>
                  </div>
                 </div>
                 
@@ -69,7 +95,7 @@
                       <label for="country">Designation:</label>
                     </div>
                     <div class="col-75">
-                            <select  name="DESIG" id="designation" onchange="dut()"">
+                            <select  name="DESIG" id="designation" onchange="dut()">
                                     <option value="PROFESSOR" selected> PROFESSOR </option>
                                     <option value="ASSISTANT-PROFESSOR">ASSISTANT-PROFESSOR </option>
                                     <option value="ASSOCIATE-PROFESSOR">ASSOCIATE-PROFESSOR </option>
@@ -79,10 +105,10 @@
                 <br>
                 <div class="row" id="buf2" >
                     <div class="col-25">
-                      <label for="country">Buffer</label>
+                      <label >Duties</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="buffer2" name="buffer" required>
+                        <input type="text" name="DUTIES" id="duties" value="2" required>
                     </div>
                 </div>
                <br>
@@ -102,36 +128,48 @@
 
     </body>
 
-    <!--<script>
-   
-      
-      
-    function check(){
-      if(document.getElementById('type').checked==true)
-      {
-              document.getElementById('buf2').style.display="block";
-              document.getElementById('buffer1').setAttribute('placeholder','Buffer per slot (REGULAR)');
-              document.getElementById('buffer2').setAttribute('placeholder','Buffer per slot (KT)');
-              document.getElementById('buffer2').setAttribute('value','');
-              document.getElementById('choice').setAttribute('value','SEM');
-              
-      
+    
+    <script>
+      function dut(){
+
+       console.log(document.getElementById('name').value) 
+
+       var design= document.getElementById('designation');
+       var duties=0;
+        //console.log(design.value)
+        switch(design.value)
+        {
+            case "PROFESSOR" : duties=2; break;
+            case "ASSISTANT-PROFESSOR": duties=8;break;
+            case "ASSOCIATE-PROFESSOR": duties=4; break;
+            
+
+        }    
+          
+        document.getElementById('duties').setAttribute('value',duties);
+        document.getElementById('duties').innerHTML=String(duties);
+
+
+
       }
-      else{
-        document.getElementById('buf2').style.display="none";
-        document.getElementById('buffer1').setAttribute('placeholder','Buffer per slot');
-        document.getElementById('choice').setAttribute('value','UT');
-        document.getElementById('buffer2').setAttribute('value','');
-      }
-    }
+  </script>
+
+
+<script>
+setTimeout(()=>{document.getElementById('alert').style.display="none";},3000);
+</script>
+<link rel="stylesheet" href="/assets/css/teacher1.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+ 
   
+</html>
 
-    </script>-->
+    
+    
 
-    <link rel="stylesheet" href="/assets/css/teacher1.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
- </html>
 
 
 

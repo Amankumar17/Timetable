@@ -192,7 +192,7 @@ appex.get('/login',function(req,res){
 })
 
 appex.get('/teacher',function(req,res){
-     res.render('teacher');
+     res.render('teacher1');
 });
 
 
@@ -482,14 +482,14 @@ appex.post('/teacher',urlencodedParser,function(req,res){
                              })      
                   
                
-               res.render('teacher',{data:"success"})
+               res.render('teacher1',{data:"success"})
               });
             }           
           else{
               //dialog.info({content:"RESPONSE not RECORDED!!"});
               //console.log("RESPONSE not RECORDED!!")
               //res.redirect('/teacher/failure');
-              res.render('teacher',{data:"failure"})    
+              res.render('teacher1',{data:"failure"})    
             }
     });
 

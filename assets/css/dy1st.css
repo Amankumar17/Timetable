@@ -1,10 +1,11 @@
 body{
-  background:url('../images/bd.jpg');
+ /* background:url('../images/bd.jpg');*/
   font-family: sans-serif;
   overflow: hidden;
   height: 100%;
   background-size: cover;
-  background-position-x: -100%;
+  
+  background-attachment:fixed; 
   }
 
 /* { box-sizing:border-box;
@@ -21,19 +22,21 @@ table{border-collapse:collapse;
   border-radius: 12px;
   color: white;
   width:10%;
-  height:18%;
-  padding: 15px 32px;
+
+  padding: 12px 42px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 12px;
   margin: 4px 2px;
   cursor: pointer;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
 
 }
 
-
+.button:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 
 td, th {
@@ -48,10 +51,10 @@ p.one{float:left;
 .card{
 width: 50rem;
   height: 30%;
-  padding: 10px;
+  padding: 1%;
   background-color:#FDFFFB;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin:5%;
+  margin:3%;
   text-align: center;}
 
 div.container {
@@ -74,58 +77,6 @@ font-size:14px;}
 
 
 
-}
-
-
-/*nav style
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 10;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #111;
-}
-
-.active {
-  background-color: #4CAF50;
-}
-.navbar a {
-  float: right;
-  
-  color: rgb(218, 19, 19);
-  font-size:30%;
-  text-decoration: none;
-  font-size:10px;
-  
-}
-
-.navbar a:hover {
-  background-color:#D2CFD3;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-}
-
-@media screen and (max-width: 500px) {
-  .navbar a {
-    float: right;
-    
-  }
 }
 
 

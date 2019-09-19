@@ -12,6 +12,12 @@
 <body>
     
     <%include partials/header.ejs%>
+    <div class="topnav">
+        <a href="\login">Home</a>
+        <a id="UPDATE" title="VIEW TIME TABLE AND UPDATE NUMBER OF BLOCKS ONLY!!"  href="/display_ut_time_table" id="target" target="_blank" >View/UPDATE</a>
+
+    </div>
+
    <center>
      
         <form action="/time/ut" method="POST" id="submitto">
@@ -74,13 +80,13 @@
         
         <button class="button">Submit</button>
         <br><br>
-        <div class="grid-container">
+      <!-- <div class="grid-container">
 
     <div class="grid-item" id="UPDATE" title="VIEW TIME TABLE AND UPDATE NUMBER OF BLOCKS ONLY!!" >
         <a href="/display_ut_time_table" id="target" target="_blank" >View/UPDATE</a></div>
     <div class="grid-item" id="FACULTY"  title="INPUT FACULTY DETAILS!!"> 
         <a href="/teacher" target="_blank" >FACULTY-INPUT</a></div>
-        </div>
+        </div>-->
 
     
     </div>

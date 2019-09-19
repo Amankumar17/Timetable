@@ -7,7 +7,6 @@ body{
     height: auto;
     background-position-y: 0%;
     
-    background-repeat: no-repeat;
 }
 
 /*toggle*/
@@ -112,8 +111,9 @@ input[type=submit]:hover {
 
 .container {
   border-radius: 5px;
-  background-color: #CAEDF7;
+  background-color:white;
   padding: 20px;
+  box-shadow: 5px 10px 8px 10px #888888;
 }
 
 .col-25 {
@@ -137,7 +137,7 @@ input[type=submit]:hover {
 
 .button{
   background-color: rgb(122, 241, 122);
-  padding:9px 12px;
+  padding:9px 15%;
   border: none;
   outline: none;
   display: inline-block;

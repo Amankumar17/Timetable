@@ -1,18 +1,54 @@
 body{
     margin: 0;
     padding:0;
-    background:url('../images/bd.jpg') no-repeat ;
+    /*background:url('../images/bd.jpg') no-repeat ;*/
     font-family: sans-serif;
     background-size: cover;
     background-position-y: 15%;
+    
     
 }
 
 .button{
     width: fit-content;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
+
+.topnav {
+    overflow: hidden;
+    background-color: rgba(250, 240, 243, 0.945);
+    box-shadow:10px 10px 5px  rgb(126, 121, 121);
+  }
+  
+  .topnav a {
+    float: left;
+    color: #0c0a0a;
+    text-align: center;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-size: 17px;
+    
+  }
+  
+  .topnav a:hover {
+    background-color: rgb(8, 7, 7);
+    color: rgb(241, 237, 237);
+  }
+  
+  .topnav a.active {
+    background-color: rgb(5, 5, 5);
+    color: white;
+  }
+  
+
+
+
+
+
+
+
+
 
 
 .grid-container{
@@ -81,6 +117,8 @@ a{
 }
 
 
+
+
 @media only screen and (max-width:800px){
     body{
         margin: 0;
@@ -147,5 +185,6 @@ input[type="text"],input[type="date"],input[type="radio"],label#val1,label#val2{
         height:auto;
         
     }
+    
         
 }

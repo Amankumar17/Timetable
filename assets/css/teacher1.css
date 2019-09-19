@@ -8,7 +8,7 @@ body{
   height: auto;
   background-position-y: 0%;
   
-  background-repeat: no-repeat;
+ 
 }
 
 /*toggle*/
@@ -78,7 +78,7 @@ background-color: #45a049;
 .container {
 border-radius: 5px;
 background-color:white;
-box-shadow: 10px 11px 18px #a8a5aa;
+box-shadow: 5px 10px 8px 10px #888888;
 padding: 20px;
 }
 
@@ -102,12 +102,37 @@ clear: both;
 }
 
 .button{
-background-color: rgb(122, 241, 122);
-padding:9px 20px;
+background-color:rgb(128, 231, 132);
+padding:9px 30px;
 border: none;
 outline: none;
 display: inline-block;
-border-radius:5px; 
+ 
+}
+.topnav {
+  overflow: hidden;
+  background-color: rgba(250, 240, 243, 0.945);
+  
+}
+
+.topnav a {
+  float: left;
+  color: #0c0a0a;
+  text-align: center;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-size: 1rem;
+  
+}
+
+.topnav a:hover {
+  background-color: rgb(8, 7, 7);
+  color: rgb(241, 237, 237);
+}
+
+.topnav a.active {
+  background-color: rgb(5, 5, 5);
+  color: white;
 }
 
 /*button toggle*/
@@ -163,4 +188,11 @@ body{
 
     }
 
+}
+
+
+@media only screen and(max-width:300px){
+  .topnav a{
+    font-size: 2rem;
+  }
 }

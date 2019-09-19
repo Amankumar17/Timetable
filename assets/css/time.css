@@ -8,6 +8,13 @@ body{
     
 }
 
+.button{
+    width: fit-content;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+
 .grid-container{
     display: grid;
     grid-template-columns: auto auto;
@@ -39,6 +46,7 @@ body{
 input#exam{
     display:none;
 }
+
 
 .card{
     box-shadow: 5px 5px 5px 5px grey; 
@@ -73,7 +81,7 @@ a{
 }
 
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width:800px){
     body{
         margin: 0;
     padding:0;
@@ -86,24 +94,37 @@ a{
     .card{
         box-shadow: 5px 5px 5px 5px grey; 
         height:auto;
+        width: fit-content;
+        margin-left: -1%;
         
     }
 
  .grid-container{
     display: grid;
     grid-template-columns: auto auto;
-    font-size: 0.5rem;
     width: fit-content;
+    font-size: 1rem;
+ }
 
+ div#UPDATE.grid-item,div#FACULTY.grid-item{
+     width: 100%;
+     font-size: 1.28rem;
  }
- .card{
-     width: fit-content;
- }
-    
-input[type="text"],input[type="date"]{
-    width:5%;
+
+input[type="text"],input[type="date"],input[type="radio"],label#val1,label#val2{
+    width:1rem;
+    font-size: 0.5rem;
 }
-    
+
+.grid-item , .grid-item1 {
+    width: 10rem;
+}
+
+.button{
+    width: fit-content;
+    text-align: center;
+    font-size: 0.5rem;
+}
 
 }
 
@@ -114,6 +135,7 @@ input[type="text"],input[type="date"]{
         height:auto;
         
     }
+
         
 }
 

@@ -1,12 +1,18 @@
 body{
     margin-top: 2%;
-    background: url('../images/bd.jpg');
-    background-position: center;
     overflow: hidden;
     background-size: 100%;
     background-position-y: 10%;
     
 
+}
+
+.img1{
+  background: url('..images/bg9.jpg');
+  filter: blur(8px);
+  background-size:cover;
+  background-position: center;
+  height: 100%;
 }
 
 
@@ -17,7 +23,7 @@ body{
   .col {
     float: left;
     width: 33.33%;
-    padding:8px 10px;
+    padding:8px 5px;
   }
   
 
@@ -43,9 +49,10 @@ body{
     background-color:transparent;
     margin:15px;
     
+    
   }
   .card1:hover{
-    background-color: powderblue;
+    transform: scale(1.25); 
     cursor: pointer;
   }
   
@@ -59,9 +66,10 @@ body{
       
     }
   
-    i.fa.fa-user,i.fa.fa-clock-o,i.fa.fa-cogs,i.fa.fa-refresh,i.fa.fa-table,i.fa.fa-pencil-square-o{
+    i.fa.fa-user,i.fa.fa-clock-o,i.fa.fa-cogs,i.fa.fa-refresh,i.fa.fa-table,i.fa.fa-pencil-square-o,i.fa.fa-list-alt{
       -webkit-transform: scale(0.25);
       -webkit-transform-origin-x: 20%;
+      color:#9f1c33;
       
      }
 
@@ -71,8 +79,9 @@ body{
 
 }
 
-  i.fa.fa-user,i.fa.fa-clock-o,i.fa.fa-cogs,i.fa.fa-list-alt,i.fa.fa-table,i.fa.fa-pencil-square-o{
+  i.fa.fa-user,i.fa.fa-clock-o,i.fa.fa-cogs,i.fa.fa-list-alt,i.fa.fa-table,i.fa.fa-pencil-square-o,i.fa.fa-list-alt{
       font-size: 10rem;
+      color:#9f1c33;
   }
   
   

@@ -163,7 +163,7 @@ appex.post('/criteria',urlencodedParser,(req,res)=>{
 
   })      
 
-
+  res.redirect('/execute');
 
   
 

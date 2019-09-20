@@ -8,19 +8,20 @@
 </head>
 <body>
         <%include partials/header.ejs%>
+        <div class="img1"></div>
         <br><br>
         <div class="row">
                 <div class="col" >
-                                <a href="/teacher" style="color:black;" ><div class="card1" align="center" title="INSERT TEACHER IN DATABASE!!" > <i class="fa fa-user" href="" aria-hidden="true"></i>
+                                <a href="/teacher" style="color:black;" ><div class="card1 ,btn tooltipped" data-position="bottom" data-tooltip="INSERT TEACHER IN DATABASE!!" align="center" title="" > <i class="fa fa-user" href="" aria-hidden="true"></i>
                   </div></a>
                 </div>
                 <div class="col">
-                <a href="/time" style="color:black;">  <div class="card1"  title="INSERT TIME-TABLE IN DATABASE!!" ><i class="fa fa-clock-o" aria-hidden="true"></i>
+                <a href="/time" style="color:black;">  <div class="card1 ,btn tooltipped" data-position="bottom" data-tooltip="INSERT TIME-TABLE IN DATABASE!!" title= ><i class="fa fa-clock-o" aria-hidden="true"></i>
                   </i></div></a>
                 </div>
                 <div class="col">
-                <a href="/execute" style="color:black;">
-                        <div class="card1"  title="PERFORM ALGORITHM" ><i class="fa fa-cogs" aria-hidden="true"></i>
+                <a  style="color:black;">
+                        <div class="card1 ,btn tooltipped ,btn modal-trigger" data-position="bottom" data-tooltip="PERFORM ALGORITHM" data-target="modal1" ><i class="fa fa-cogs" aria-hidden="true"></i>
                   </div>
                 </a>
                 </div>
@@ -29,24 +30,151 @@
         <div class="row">
                 <div class="col">
                 <a style="color: black;" href="/requirement">        
-                  <div class="card1"  title="PRINT SLIPS" ><i class="fa fa-list-alt" ></i></div>
+                  <div class="card1 ,btn tooltipped" data-position="bottom" data-tooltip="PRINT SLIPS"  title=><i class="fa fa-list-alt" ></i></div>
                 </div>
                 </a>
                 <a  style="color:black;" href="/display_chart/sem">
                 <div class="col" >
-                        <div class="card1"  title="DISPLAY-CHART"><i class="fa fa-table" aria-hidden="true"></i></div>
+                        <div class="card1 ,btn tooltipped" data-position="bottom" data-tooltip="DISPLAY-CHART"  title=><i class="fa fa-table" aria-hidden="true"></i></div>
                 </div>
                 </a>
                 <div class="col">
-                        <div class="card1"  title="UPDATE TIME-TABLE/TEACHER"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        <div class="card1 ,btn tooltipped" data-position="bottom" data-tooltip="UPDATE TIME-TABLE/TEACHER" title=><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                         </div>
                 </div>
         </div>
+
+        <!-- Modal Structure -->
+  <div id="modal1" class="modal"  >
+        <div class="modal-content">
+                        <form action="/criteria" method="POST" >
+                                <center>
+                                          <!-- Switch -->
+                                        <div class="switch">
+                                                        <label>
+                                                        UT
+                                                        <input type="checkbox" id="type" onclick="check();">
+                                                        <span class="lever"></span>
+                                                        SEM
+                                                        </label>
+                                                </div>
+            
+            
+
+                                          <input type="text" name="type" id="choice" style="display:none" value="UT" >
+                                        </center>
+                                 <!--sem-->
+                                        
+                                  <div class="b"><div class="container">
+                                        
+                                            <div class="nav" id="select" style="display:none;">
+                                            <button>Regular</button>
+                                            <button>KT</button>
+                                        </div>
+                        
+                                
+                                        
+                                        <div class="row">
+                                         <div class="col-25">
+                                           <label for="fname"><h5>Professors</h5></label>
+                                         </div>
+                                         <div class="col-75">
+                                           <input type="text" name="contriprof"  pattern="[\d]+" placeholder="Max No. of duties for Professors" required>
+                                         </div>
+                                        </div>
+                        
+                                        
+                                        
+                                        <div class="row">
+                                         <div class="col-25">
+                                           <label for="lname"><h5> Assistant</h5></label>
+                                         </div>
+                                         <div class="col-75">
+                                           <input type="text"  name="contriasst" pattern="[\d]+" placeholder="Max No. of duties for Assistant Professors" required>
+                                         </div>
+                                        </div>
+                                        
+                                
+                                        
+                                        <div class="row">
+                                         <div class="col-25">
+                                           <label for="country"><h5>Associative</h5></label>
+                                         </div>
+                                         <div class="col-75">
+                                             <input type="text" id="lname" name="contriassp" pattern="[\d]+" placeholder="Max No. of duties for Associative Professors" required>
+                                         </div>
+                                        </div>
+                                        
+                                        
+                                       
+                                    </div>
+                                 </div>
+                               
+                        
+                        
+                                
+                                
+                              
+                        
+          
+        </div>
+        <div class="modal-footer">
+                        <div class="row">
+                                        <button type="submit" class="button,modal-close waves-effect waves-green btn-flat">SUBMIT</button>
+                      
+                                     </div>
+                                </form>                 
+          </div>
+      </div>
         
                               
 </body>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <link rel="stylesheet" href="/assets/css/home.css">
+      <!--  <link rel="stylesheet" href="/assets/css/duties_input.css">-->
+
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="/assets/css/materialize.min.css"  media="screen,projection"/>
+      <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
+
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.modal');
+                var instances = M.Modal.init(elems,{inDuration:250});
+              });
+        
+  document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.tooltipped');
+        var instances = M.Tooltip.init(elems, {position:"bottom"});
+      });
+
+              function check(){
+                if(document.getElementById('type').checked==true)
+                {
+                        //document.getElementById('buf2').style.display="block";
+                        //document.getElementById('buffer1').setAttribute('placeholder','Buffer per slot (REGULAR)');
+                        //document.getElementById('buffer2').setAttribute('placeholder','Buffer per slot (KT)');
+                        //document.getElementById('buffer2').setAttribute('value','');
+                        document.getElementById('choice').setAttribute('value','SEM');
+                        
+                
+                }
+                else{
+                  //document.getElementById('buf2').style.display="none";
+                  //document.getElementById('buffer1').setAttribute('placeholder','Buffer per slot');
+                  document.getElementById('choice').setAttribute('value','UT');
+                  //document.getElementById('buffer2').setAttribute('value','');
+                }
+              }
+            
+          
+          
+
+      </script>
+
 
 </html>

@@ -840,8 +840,9 @@ appex.post("/ut_algo",urlencodedParser,function(req,res){
     model_selections:selections,
     criteria:criteria
   }
+
    var ut_algo=require("./ut.js")
-    
+    ut_algo();  
   //var allot_teacher=require("./allot_teachers.js");
 
 
@@ -858,6 +859,8 @@ appex.post("/sem_algo",urlencodedParser,function (req,res) {
     criteria
   }
   var sem_algo=require("./sem.js")
+  sem_algo();
+
   res.redirect("/execute")
 })
 
@@ -886,6 +889,8 @@ appex.post('/allot_ut_selected',urlencodedParser,(req,res)=>{
   }
 
   var allot_teacher=require("./allot_ut_teachers.js");
+  allot_teacher();
+
   res.redirect("/execute")
 
   
@@ -903,6 +908,8 @@ appex.post('/allot_sem_selected',urlencodedParser,(req,res)=>{
   }
 
   var allot_teacher=require("./allot_sem_teachers.js");
+  allot_teacher();
+  
   res.redirect("/execute")
 
   

@@ -68,13 +68,14 @@ body{
   
     i.fa.fa-user,i.fa.fa-clock-o,i.fa.fa-cogs,i.fa.fa-refresh,i.fa.fa-table,i.fa.fa-pencil-square-o,i.fa.fa-list-alt{
       -webkit-transform: scale(0.25);
-      -webkit-transform-origin-x: 20%;
       color:#9f1c33;
       
      }
 
      div.card1{
-         padding:-0.5rem; 
+        width: fit-content;
+        text-align: center;
+        
      }
 
 }

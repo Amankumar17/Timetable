@@ -7,22 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HOMEPAGE</title>
 </head>
-<body>
+<body class="grey lighten-3">
         <%include partials/header.ejs%>
         <div class="img1"></div>
         <br><br>
-        <div class="row">
+        <div class="row medium">
                 <div class="col" >
-                                <a href="/teacher" style="color:black;" ><div class="card1 ,btn tooltipped" data-position="bottom" data-tooltip="INSERT TEACHER IN DATABASE!!" align="center" title="" > <i class="fa fa-user" href="" aria-hidden="true"></i>
+                                <a href="/teacher" style="color:black;" ><div class="card1 ,btn tooltipped hoverable" data-position="bottom" data-tooltip="INSERT TEACHER IN DATABASE!!" align="center" title="" > <i class="fa fa-user" href="" aria-hidden="true"></i>
                   </div></a>
                 </div>
                 <div class="col">
-                <a href="/time" style="color:black;">  <div class="card1 ,btn tooltipped" data-position="bottom" data-tooltip="INSERT TIME-TABLE IN DATABASE!!" title= ><i class="fa fa-clock-o" aria-hidden="true"></i>
+                <a href="/time" style="color:black;">  <div class="card1 ,btn tooltipped hoverable" data-position="bottom" data-tooltip="INSERT TIME-TABLE IN DATABASE!!" title= ><i class="fa fa-clock-o" aria-hidden="true"></i>
                   </i></div></a>
                 </div>
                 <div class="col">
                 <a  style="color:black;">
-                        <div class="card1 ,btn tooltipped ,btn modal-trigger" data-position="bottom" data-tooltip="PERFORM ALGORITHM" data-target="modal1" ><i class="fa fa-cogs" aria-hidden="true"></i>
+                        <div class="card1 ,btn tooltipped ,btn modal-trigger hoverable" data-position="bottom" data-tooltip="PERFORM ALGORITHM" data-target="modal1" ><i class="fa fa-cogs" aria-hidden="true"></i>
                   </div>
                 </a>
                 </div>
@@ -31,28 +31,28 @@
         <div class="row">
                 <div class="col">
                 <a style="color: black;" href="/requirement">        
-                  <div class="card1 ,btn tooltipped" data-position="bottom" data-tooltip="PRINT SLIPS"  title=><i class="fa fa-list-alt" ></i></div>
+                  <div class="card1 ,btn tooltipped hoverable" data-position="bottom" data-tooltip="PRINT SLIPS"  title=><i class="fa fa-list-alt" ></i></div>
                 </div>
                 </a>
                 <a  style="color:black;" href="/display_chart/sem">
                 <div class="col" >
-                        <div class="card1 ,btn tooltipped" data-position="bottom" data-tooltip="DISPLAY-CHART"  title=><i class="fa fa-table" aria-hidden="true"></i></div>
+                        <div class="card1 ,btn tooltipped hoverable" data-position="bottom" data-tooltip="DISPLAY-CHART"  title=><i class="fa fa-table" aria-hidden="true"></i></div>
                 </div>
                 </a>
                 <div class="col">
-                        <div class="card1 ,btn tooltipped" data-position="bottom" data-tooltip="UPDATE TIME-TABLE/TEACHER" title=><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        <div class="card1 ,btn tooltipped hoverable" data-position="bottom" data-tooltip="UPDATE TIME-TABLE/TEACHER" title=><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                         </div>
                 </div>
         </div>
 
         <!-- Modal Structure -->
-  <div id="modal1" class="modal"  >
+  <div id="modal1" class="modal black white-text"  >
         <div class="modal-content">
                         <form action="/criteria" method="POST" >
                                 <center>
                                           <!-- Switch -->
                                         <div class="switch">
-                                                        <label>
+                                                        <label class="yellow-text" >
                                                         UT
                                                         <input type="checkbox" id="type" onclick="check();">
                                                         <span class="lever"></span>
@@ -77,10 +77,10 @@
                                         
                                         <div class="row">
                                          <div class="col-25">
-                                           <label for="fname"><h5>Professors</h5></label>
+                                           <label for="fname" class="yellow-text" ><h5>Professors</h5></label>
                                          </div>
                                          <div class="col-75">
-                                           <input type="text" name="contriprof"  pattern="[\d]+" placeholder="Max No. of duties for Professors" required>
+                                           <input type="text" name="contriprof"  class="white-text" pattern="[\d]+" placeholder="Max No. of duties for Professors" required>
                                          </div>
                                         </div>
                         
@@ -88,10 +88,10 @@
                                         
                                         <div class="row">
                                          <div class="col-25">
-                                           <label for="lname"><h5> Assistant</h5></label>
+                                           <label for="lname" class="yellow-text"><h5> Assistant</h5></label>
                                          </div>
                                          <div class="col-75">
-                                           <input type="text"  name="contriasst" pattern="[\d]+" placeholder="Max No. of duties for Assistant Professors" required>
+                                           <input type="text"  name="contriasst" class="white-text" pattern="[\d]+" placeholder="Max No. of duties for Assistant Professors" required>
                                          </div>
                                         </div>
                                         
@@ -99,33 +99,22 @@
                                         
                                         <div class="row">
                                          <div class="col-25">
-                                           <label for="country"><h5>Associative</h5></label>
+                                           <label for="country" class="yellow-text"><h5>Associative</h5></label>
                                          </div>
                                          <div class="col-75">
-                                             <input type="text" id="lname" name="contriassp" pattern="[\d]+" placeholder="Max No. of duties for Associative Professors" required>
+                                             <input type="text" id="lname" class="white-text" name="contriassp" pattern="[\d]+" placeholder="Max No. of duties for Associative Professors" required>
                                          </div>
                                         </div>
-                                        
-                                        
-                                       
                                     </div>
                                  </div>
-                               
-                        
-                        
-                                
-                                
-                              
-                        
           
         </div>
-        <div class="modal-footer">
-                        <div class="row">
-                                        <button type="submit" class="button,modal-close waves-effect waves-green btn-flat">SUBMIT</button>
+        
+                  <button type="submit" class="btn red modal-close waves-effect waves-white btn-flat white-text" style="float: right;">SUBMIT</button>
                       
-                                     </div>
+                                  
                                 </form>                 
-          </div>
+        
       </div>
         
                               

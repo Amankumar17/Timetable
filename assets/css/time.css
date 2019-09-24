@@ -16,7 +16,7 @@ body{
 }
 
 .topnav {
-    overflow: hidden;
+
     background-color: rgba(250, 240, 243, 0.945);
     box-shadow:10px 10px 5px  rgb(126, 121, 121);
   }

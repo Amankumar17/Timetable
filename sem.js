@@ -9,12 +9,14 @@ var obj= require('./index.js');
 
 var time_sem = obj.semester_model_time_table.find({}).sort({"exdate":1}).exec()
 
+
 var sync=require('sync')
 
 console.log("FOR SEM : \n")
 
 console.log(obj.criteria)
 
+console.log(obj.model_prof.length,obj.model_asap.length,obj.model_astp.length)
 obj.criteria.find({"type":"SEM"},(err,data)=>{
     console.log(data)
 
@@ -33,12 +35,13 @@ obj.criteria.find({"type":"SEM"},(err,data)=>{
                var prof_contri=Math.round(blocks*(data[0].profcontri/total))
                var astp_contri=Math.round(blocks*(data[0].astpcontri/total))
                var aasp_contri=Math.round(blocks*(data[0].asspcontri/total))
-               if (prof_contri+aasp_contri+astp_contri < blocks)
+               if (prof_contri+aasp_contri+astp_contri != blocks)
                {
-                   astp_contri = astp_contri + (blocks-prof_contri+aasp_contri+astp_contri)
+                   astp_contri = astp_contri + (blocks-(prof_contri+aasp_contri+astp_contri))
                }
-               console.log("BLOCKS ARE: ",blocks,"PROF HAS ",prof_contri,"ASST-PROF HAS ",astp_contri,"ASSCP-PROF HAS ",aasp_contri)
                
+               console.log("BLOCKS ARE: ",blocks,"PROF HAS ",prof_contri,"ASST-PROF HAS ",astp_contri,"ASSCP-PROF HAS ",aasp_contri)
+               console.log("\n\n"+data[0].profcontri,data[0].asspcontri,data[0].astpcontri+"\n")
                 
                while(prof_contri>0)
                { 
@@ -49,6 +52,7 @@ obj.criteria.find({"type":"SEM"},(err,data)=>{
                       if (data.length==0 && flag==1)
                       {
                           astp_contri = astp_contri + prof_contri;
+                          console.log(astp_contri,prof_contri)
                           flag=0;
                           return
                       }
@@ -103,6 +107,7 @@ obj.criteria.find({"type":"SEM"},(err,data)=>{
                       if (data.length==0 && flag==1)
                       {
                           astp_contri = astp_contri + aasp_contri;
+                          console.log(astp_contri,aasp_contri)
                           flag=0;
                           return
                       }
@@ -197,6 +202,5 @@ obj.criteria.find({"type":"SEM"},(err,data)=>{
 
 }
 
-/*
 
-*/
+

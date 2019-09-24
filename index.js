@@ -897,6 +897,7 @@ appex.post('/allot_ut_selected',urlencodedParser,(req,res)=>{
 })
 
 
+
 appex.post('/allot_sem_selected',urlencodedParser,(req,res)=>{
   module.exports = {
     semester_model_time_table:semester_model_time_table,

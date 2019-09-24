@@ -1,0 +1,51 @@
+<nav>
+        <div class="nav-wrapper grey">        
+           <img src="../assets/images/rait.png" id="image" class="brand-logo responsive-img">
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons" >menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/home" class="material-icons" >home HOME</a></li>
+            <li><a id="time_table" href="" class="material-icons dropdown-trigger" data-target="dropdown1">access_time TIME</a></li>
+            <li><a id="teacher"  href="" class="material-icons"  accessibility TEACHER</a></li>
+            <li><a href="" >LOGOUT</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav" id="mobile-demo">
+            <li><a href="/home" class="material-icons" >home HOME</a></li>
+            <li><a id="time_table" href="" class="material-icons" >access_time TIME</a></li>
+            <li><a id="teacher1"  href="" class="material-icons" >accessibility TEACHER</a></li>
+            <li><a   href="" >LOGOUT</a></li>
+             
+    </ul>
+
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+    </ul>
+
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {});
+  }); 
+  
+      </script>
+
+   <script>
+     var val=document.URL.split('/');
+    var m= val[val.length-1]
+    console.log(m)
+    document.getElementById(m).style.display="none";
+    document.getElementById(m+"1").style.display="none";
+  
+    </script>
+
+    <script>
+      $(document).ready(()=>{
+        $(".dropdown-trigger").dropdown();
+      })
+    </script>

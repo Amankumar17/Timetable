@@ -1,9 +1,10 @@
 body{
   background:url('../images/bd.jpg');
-  font-family: sans-serif;
-  overflow: hidden;
+  
+  height:100%;
   background-size: cover;
-  background-position-x: -100%;
+  background-attachment: fixed;
+ 
   }
 
  *{ box-sizing:border-box;
@@ -52,7 +53,7 @@ table{border-collapse:collapse;
   }
 
 
-
+/*
 .topnav {
   overflow: hidden;
   background-color: rgb(240, 142, 142);
@@ -67,7 +68,7 @@ table{border-collapse:collapse;
   font-size: 17px;
 }
 
-/*.grid-container{
+.grid-container{
   display: grid;
   grid-template-columns: auto auto;
   
@@ -130,12 +131,12 @@ font-size:16px;}
     display: block;
 }
 
-.nav{
+/*.nav{
   background-color: lightcoral;
   padding: 8px;
   margin:1% 2%;
   height: 5%;
-}
+}*/
 
 ul{
   padding:0;

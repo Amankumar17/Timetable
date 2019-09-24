@@ -23,7 +23,7 @@ var criteriaschema = new mongoose.Schema({
 
 var teacherSchema= new mongoose.Schema({
   UNAME:String,
-  SDRN:String,
+  SDRN:Number,
   DEPT:String,
   DESIG:String,
   DUTIES:Number,
@@ -64,7 +64,7 @@ var ut_timetableSchema= new mongoose.Schema({
 
 var professorschema= new mongoose.Schema({
   UNAME:String,
-  SDRN:String,
+  SDRN:Number,
   DEPT:String,
   DESIG:String,
   DUTIES:Number,
@@ -75,7 +75,7 @@ var professorschema= new mongoose.Schema({
 
 var asstprofessorschema= new mongoose.Schema({
   UNAME:String,
-  SDRN:String,
+  SDRN:Number,
   DEPT:String,
   DESIG:String,
   DUTIES:Number,
@@ -86,7 +86,7 @@ var asstprofessorschema= new mongoose.Schema({
 
 var assoprofessorschema= new mongoose.Schema({
   UNAME:String,
-  SDRN:String,
+  SDRN:Number,
   DEPT:String,
   DESIG:String,
   DUTIES:Number,
@@ -100,7 +100,7 @@ var selected_time_table=new mongoose.Schema({
   DEPT:String,
   teacher:String,
   type:String,
-  SDRN:String
+  SDRN:Number
 })
 
 
@@ -444,14 +444,14 @@ appex.post('/teacher',urlencodedParser,function(req,res){
 
 
       
-    model_teacher.countDocuments({SDRN:req.body.SDRN},function(err,data){
+    model_teacher.countDocuments({SDRN:parseInt(req.body.SDRN)},function(err,data){
           if (err) throw err;
           console.log(data)
           if (data==0)
             {
                 var obj={
                   UNAME:req.body.UNAME,
-                  SDRN:req.body.SDRN,
+                  SDRN:parseInt(req.body.SDRN),
                   DEPT:req.body.DEPT,
                   DESIG:req.body.DESIG,
                   DUTIES:parseInt(req.body.DUTIES),
@@ -1128,6 +1128,16 @@ tt.promiseteacher.then( async function(data){
 
 })*/
 //model_teacher.deleteMany({"SDRN":"17"})
+
+// THIS IS TO POPULATE THE DATABASE ===>
+
+module.exports = {
+  model_prof,
+  model_asap,
+  model_astp
+}
+
+//var populate=require('./populate.js')
 
 
 appex.listen(5)

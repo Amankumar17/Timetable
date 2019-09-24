@@ -6,7 +6,7 @@ body{
   background: url('../images/bd.jpg');
   background-size:cover;
   height: auto;
-  background-position-y: 0%;
+  background-attachment:fixed; 
   
  
 }
@@ -15,7 +15,7 @@ body{
 .switch {
 position: relative;
 display: inline-block;
-width: 60px;
+width: 60%;
 height: 34px;
 }
 
@@ -24,12 +24,12 @@ height: 34px;
 div.b {
 position: relative;
 left: 0;
-width: 47%;
+width: 47.7%;
 height: 120px;
 margin-left:2%;
 
 } 
-/*container ut*/
+/*container ut
 div.c {
   
 right:0;
@@ -37,7 +37,7 @@ width: 47%;
 height: 120px;
 margin-right: 2%;
 
-} 
+} */
 @media only screen and (max-width: 600px) {
 .a{width:100%;
 clear:both;
@@ -50,7 +50,7 @@ box-sizing: border-box;
 
 input[type=text], textarea,select {
 width: 100%;
-padding: 12px;
+padding: 12px 20px;
 border: 1px solid #ccc;
 border-radius: 4px;
 resize: vertical;
@@ -77,9 +77,12 @@ background-color: #45a049;
 
 .container {
 border-radius: 5px;
+height:auto;
+padding: 40px;
+box-sizing: border-box;
 background-color:white;
 box-shadow: 5px 10px 8px 10px #888888;
-padding: 20px;
+/*padding: 20px;*/
 }
 
 .col-25 {
@@ -145,11 +148,33 @@ display: none;
 }
 
 
+.nav button{
+  color:black;
+  background-color:rgb(66, 217, 255);
+  padding:8px;
+  width:49.5%;
+  float:left;
+  border: none;
+  outline: none;
+  display: inline-block;
+}
+button:hover{
+  /*box-shadow: 5px 10px 20px red inset;*/
+  box-shadow: 5px 10px 5px #888888;
+
+  /*box-shadow: 10px 10px 5px #aaaaaa;*/
+  border:1px solid rgb(192, 190, 190);
+  
+}
+
+
+
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
+/*@media screen and (max-width: 600px) {
 .col-25, .col-75, input[type=submit] {
   width: 100%;
   margin-top: 0;
+ 
 }
 }
 @media screen and (max-width: 600px) {
@@ -160,25 +185,7 @@ display: none;
 
 
 
-  .nav button{
-      color:black;
-      background-color:rgb(66, 217, 255);
-      padding:8px;
-      width:49.5%;
-      float:left;
-      border: none;
-      outline: none;
-      display: inline-block;
-    }
-    button:hover{
-      /*box-shadow: 5px 10px 20px red inset;*/
-      box-shadow: 5px 10px 5px #888888;
-
-      /*box-shadow: 10px 10px 5px #aaaaaa;*/
-      border:1px solid rgb(192, 190, 190);
-      
-    }
-
+  
 @media only screen and(max-width:800px){
 
 body{
@@ -195,4 +202,76 @@ body{
   .topnav a{
     font-size: 2rem;
   }
+}
+
+
+@media only screen and(max-width:400px){}
+*/
+
+@media screen and (max-width: 1200px) {
+  div.b  {	
+	width: 80%;
+  margin: 0 15% 0 15%;
+  font-size:22px;
+  }
+}
+
+/*@media screen and (max-width: 920px) {
+  div.b  {	
+	width: 60%;
+	margin: 0 0 0 22%;
+  }
+}*/
+
+@media screen and (max-width: 800px) {
+  div.b  {	
+	width: 65%;
+  margin: 0 10% 0 10%;
+  font-size: 20px;
+  }
+  .col-25 {
+    float: left;
+    width: 25%;
+    clear:both;
+    }
+    
+    .col-75 {
+    
+    width: 95%;
+    
+    }
+
+
+
+
+
+
+}
+
+@media screen and (max-width: 600px) {
+  div.b  {	
+	width: 90%;
+	margin: 0 4% 0 4%;
+  }
+
+  .col-25 {
+    float: left;
+    width: 25%;
+    clear:both;
+    }
+    
+    .col-75 {
+    
+    width: 95%;
+    
+    }
+
+    input[type=text], select {
+      width: 100%;
+     
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+      font-size: 12px;
+      }
 }

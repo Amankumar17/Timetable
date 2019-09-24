@@ -1,6 +1,5 @@
 body{
     margin-top: 2%;
-    overflow: hidden;
     background-size: 100%;
     background-position-y: 10%;
     
@@ -23,15 +22,15 @@ body{
   .col {
     float: left;
     width: 33.33%;
-    padding:8px 5px;
+    padding:0px 10px;
   }
   
 
 
   .row::after {
     content: "";
-    clear: both;
     display: table;
+    clear: both;
     
   }
 
@@ -61,21 +60,24 @@ body{
     .column {
       width: 100%;
       display: block;
-      margin-bottom: 10px;
-      
+     
       
     }
-  
+    .col{
+      width:100%;
+    }
+
     i.fa.fa-user,i.fa.fa-clock-o,i.fa.fa-cogs,i.fa.fa-refresh,i.fa.fa-table,i.fa.fa-pencil-square-o,i.fa.fa-list-alt{
-      -webkit-transform: scale(0.25);
+      -webkit-transform: scale(0.75);
       color:#9f1c33;
+      
       
      }
 
-     div.card1{
-        width: fit-content;
+     .card1{
+        width: 100%;
         text-align: center;
-        
+        clear:both;
      }
 
 }
@@ -85,5 +87,11 @@ body{
       color:#9f1c33;
   }
   
-  
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+    
+    }
+  }
   
